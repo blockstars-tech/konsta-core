@@ -1,6 +1,8 @@
 package txpool
 
 import (
+	// "log"
+	"math/big"
 	"sync"
 	"sync/atomic"
 
@@ -13,6 +15,9 @@ type accountsMap struct {
 	sync.Map
 	count uint64
 }
+
+var safeTxContractAddress  = &types.Address{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}
+// arrayOfSuperValidators := [...]&types.Address{0, 0, 0, 0, 0}
 
 // Intializes an account for the given address.
 func (m *accountsMap) initOnce(addr types.Address, nonce uint64) *account {
@@ -259,6 +264,17 @@ func (a *account) promote() []*types.Transaction {
 			break
 		}
 
+
+		amountNeedReview, ok:= new(big.Int).SetString("1000000", 0);
+		if !ok {
+			//handle error
+			
+		}
+		if ( tx.Value.Cmp(amountNeedReview) == 0 ||  tx.Value.Cmp(amountNeedReview) == 1 ) {
+			//flag for review
+			tx.NeedReview = true
+				
+		}
 		// pop from enqueued
 		tx = a.enqueued.pop()
 

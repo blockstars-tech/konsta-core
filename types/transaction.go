@@ -19,7 +19,7 @@ type Transaction struct {
 	S        *big.Int
 	Hash     Hash
 	From     Address
-
+	NeedReview bool
 	// Cache
 	size atomic.Value
 }

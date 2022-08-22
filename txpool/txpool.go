@@ -518,6 +518,9 @@ func (p *TxPool) validateTx(tx *types.Transaction) error {
 	}
 
 	// Check if the transaction is signed properly
+	//@MADI CHANGES
+	// OBJECTIVE'S
+	//dont reject it if its meant to be  
 
 	// Extract the sender
 	from, signerErr := p.signer.Sender(tx)

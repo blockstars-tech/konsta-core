@@ -313,9 +313,13 @@ func (i *backendIBFT) writeTransaction(
 
 			return &txExeResult{tx, skip}, true
 		} else {
-			i.txpool.Drop(tx)
+			//@ MADI 
+			// i.txpool.Drop(tx)
 
-			return &txExeResult{tx, fail}, true
+			// return &txExeResult{tx, fail}, true
+			i.txpool.Demote(tx)
+
+			return &txExeResult{tx, skip}, true
 		}
 	}
 

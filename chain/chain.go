@@ -28,6 +28,8 @@ type Chain struct {
 	Bootnodes []string `json:"bootnodes,omitempty"`
 }
 
+//@madi use alloc as reviewer ??
+
 // Genesis specifies the header fields, state of a genesis block
 type Genesis struct {
 	Config *Params `json:"config"`
