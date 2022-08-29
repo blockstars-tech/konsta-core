@@ -25,7 +25,9 @@ const (
 
 	//	maximum allowed number of times an account
 	//	was excluded from block building (ibft.writeTransactions)
-	maxAccountDemotions = uint(10)
+	//@MADI
+	// maxAccountDemotions = uint(10)
+	maxAccountDemotions = uint(1000000)
 )
 
 // errors
