@@ -396,6 +396,7 @@ func (s *Server) setupConsensus() error {
 		&consensus.Params{
 			Context:        context.Background(),
 			Seal:           s.config.Seal,
+			SealAndSign:    s.config.SealAndSign,
 			Config:         config,
 			TxPool:         s.txpool,
 			Network:        s.network,

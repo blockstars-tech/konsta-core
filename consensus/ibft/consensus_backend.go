@@ -235,7 +235,7 @@ func (i *backendIBFT) writeTransactions(
 			"successful", successful,
 			"failed", failed,
 			"skipped", skipped,
-			"remaining", i.txpool.Length(),
+			"remaining", i.txpool.Length() ,
 		)
 	}()
 
@@ -289,8 +289,8 @@ func (i *backendIBFT) writeTransaction(
 	}
 
 	if tx.ExceedsBlockGasLimit(gasLimit) {
-		i.txpool.Drop(tx)
-
+		// i.txpool.Drop(tx)
+			i.txpool.Demote(tx)
 		if err := transition.WriteFailedReceipt(tx); err != nil {
 			i.logger.Error(
 				fmt.Sprintf(
@@ -300,8 +300,9 @@ func (i *backendIBFT) writeTransaction(
 			)
 		}
 
-		//	continue processing
-		return &txExeResult{tx, fail}, true
+		// //	continue processing
+		// return &txExeResult{tx, fail}, true
+		return &txExeResult{tx, skip}, true
 	}
 
 	if err := transition.Write(tx); err != nil {
@@ -309,7 +310,7 @@ func (i *backendIBFT) writeTransaction(
 			//	stop processing
 			return nil, false
 		} else if appErr, ok := err.(*state.TransitionApplicationError); ok && appErr.IsRecoverable { // nolint:errorlint
-			i.txpool.Demote(tx)
+			// i.txpool.Demote(tx)
 
 			return &txExeResult{tx, skip}, true
 		} else {
@@ -317,7 +318,7 @@ func (i *backendIBFT) writeTransaction(
 			// i.txpool.Drop(tx)
 
 			// return &txExeResult{tx, fail}, true
-			i.txpool.Demote(tx)
+			// i.txpool.Demote(tx)
 
 			return &txExeResult{tx, skip}, true
 		}

@@ -78,6 +78,8 @@ type backendIBFT struct {
 
 	sealing bool // Flag indicating if the node is a sealer
 
+	sealAndSigning bool
+
 	closeCh chan struct{} // Channel for closing
 }
 
@@ -121,6 +123,7 @@ func Factory(params *consensus.Params) (consensus.Consensus, error) {
 		epochSize:          epochSize,
 		quorumSizeBlockNum: quorumSizeBlockNum,
 		sealing:            params.Seal,
+		sealAndSigning: params.SealAndSign,
 		metrics:            params.Metrics,
 		secretsManager:     params.SecretsManager,
 		blockTime:          time.Duration(params.BlockTime) * time.Second,
@@ -457,6 +460,12 @@ var (
 // isSealing checks if the current node is sealing blocks
 func (i *backendIBFT) isSealing() bool {
 	return i.sealing
+}
+
+
+// isSealingAndSigning checks if the current node is sealing blocks
+func (i *backendIBFT) isSealingAndSigning() bool {
+	return i.sealAndSigning
 }
 
 // verifyHeaderImpl implements the actual header verification logic

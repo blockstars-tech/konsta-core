@@ -10,6 +10,7 @@ test-chain*
 polygon-edge-chain*
 .idea
 
+vendor
 # Exclude the build .exe file from version control
 dist/
 main.exe

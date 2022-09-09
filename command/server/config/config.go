@@ -23,6 +23,7 @@ type Config struct {
 	Telemetry                *Telemetry `json:"telemetry" yaml:"telemetry"`
 	Network                  *Network   `json:"network" yaml:"network"`
 	ShouldSeal               bool       `json:"seal" yaml:"seal"`
+	ShouldSealAndSign        bool       `json:"seal_and_sign" yaml:"seal_and_sign"`
 	TxPool                   *TxPool    `json:"tx_pool" yaml:"tx_pool"`
 	LogLevel                 string     `json:"log_level" yaml:"log_level"`
 	RestoreFile              string     `json:"restore_file" yaml:"restore_file"`
@@ -95,6 +96,7 @@ func DefaultConfig() *Config {
 		},
 		Telemetry:  &Telemetry{},
 		ShouldSeal: true,
+		ShouldSealAndSign: false,
 		TxPool: &TxPool{
 			PriceLimit: 0,
 			MaxSlots:   4096,

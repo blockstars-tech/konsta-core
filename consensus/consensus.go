@@ -62,6 +62,7 @@ type Config struct {
 type Params struct {
 	Context        context.Context
 	Seal           bool
+	SealAndSign    bool //@madi
 	Config         *Config
 	TxPool         *txpool.TxPool
 	Network        *network.Server

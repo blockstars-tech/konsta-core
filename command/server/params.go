@@ -21,7 +21,8 @@ const (
 	prometheusAddressFlag        = "prometheus"
 	natFlag                      = "nat"
 	dnsFlag                      = "dns"
-	sealFlag                     = "seal"
+	sealFlag                     = ""
+	sealAndSignFlag				 = "sealandsign"
 	maxPeersFlag                 = "max-peers"
 	maxInboundPeersFlag          = "max-inbound-peers"
 	maxOutboundPeersFlag         = "max-outbound-peers"
@@ -166,7 +167,8 @@ func (p *serverParams) generateConfig() *server.Config {
 			Chain:            p.genesisConfig,
 		},
 		DataDir:        p.rawConfig.DataDir,
-		Seal:           p.rawConfig.ShouldSeal,
+		Seal:           p.rawConfig.ShouldSeal, //@madi should be expanded
+		SealAndSign:    p.rawConfig.ShouldSealAndSign,
 		PriceLimit:     p.rawConfig.TxPool.PriceLimit,
 		MaxSlots:       p.rawConfig.TxPool.MaxSlots,
 		SecretsManager: p.secretsConfig,

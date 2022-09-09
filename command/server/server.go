@@ -15,7 +15,7 @@ import (
 func GetCommand() *cobra.Command {
 	serverCmd := &cobra.Command{
 		Use:     "server",
-		Short:   "The default command that starts the Polygon Edge client, by bootstrapping all modules together",
+		Short:   "The konsta server that starts the Polygon Edge client, by bootstrapping all modules together",
 		PreRunE: runPreRun,
 		Run:     runCommand,
 	}
@@ -125,6 +125,15 @@ func setFlags(cmd *cobra.Command) {
 		defaultConfig.ShouldSeal,
 		"the flag indicating that the client should seal blocks",
 	)
+
+	cmd.Flags().BoolVar(
+		&params.rawConfig.ShouldSealAndSign,
+		sealAndSignFlag,
+		defaultConfig.ShouldSealAndSign,
+		"the flag indicating that the client should seal and sign blocks",
+	)
+
+	
 
 	cmd.Flags().BoolVar(
 		&params.rawConfig.Network.NoDiscover,

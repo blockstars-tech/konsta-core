@@ -33,6 +33,8 @@ type Config struct {
 
 	Seal bool
 
+	SealAndSign bool
+
 	SecretsManager *secrets.SecretsManagerConfig
 
 	LogLevel hclog.Level
