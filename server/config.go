@@ -33,6 +33,7 @@ type Config struct {
 	RestoreFile *string
 
 	Seal bool
+	SealingAndSigning bool
 
 	SecretsManager *secrets.SecretsManagerConfig
 

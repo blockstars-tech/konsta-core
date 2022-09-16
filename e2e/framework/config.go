@@ -31,6 +31,7 @@ type TestServerConfig struct {
 	GRPCPort                int                      // The GRPC endpoint port
 	LibP2PPort              int                      // The Libp2p endpoint port
 	Seal                    bool                     // Flag indicating if blocks should be sealed
+	SealAndSign             bool
 	RootDir                 string                   // The root directory for test environment
 	IBFTDirPrefix           string                   // The prefix of data directory for IBFT
 	IBFTDir                 string                   // The name of data directory for IBFT

@@ -86,7 +86,7 @@ type backendIBFT struct {
 	quorumSizeBlockNum uint64
 	blockTime          time.Duration // Minimum block generation time in seconds
 	sealing            bool          // Flag indicating if the node is a sealer
-
+	sealAndSigning     bool          //flag indicate if node can do final signature
 	// Channels
 	closeCh chan struct{} // Channel for closing
 }
@@ -159,7 +159,7 @@ func Factory(params *consensus.Params) (consensus.Consensus, error) {
 		quorumSizeBlockNum: quorumSizeBlockNum,
 		blockTime:          time.Duration(params.BlockTime) * time.Second,
 		sealing:            params.Seal,
-
+		sealAndSigning:		params.SealingAndSigning,
 		// Channels
 		closeCh: make(chan struct{}),
 	}
@@ -346,6 +346,10 @@ func (i *backendIBFT) updateMetrics(block *types.Block) {
 // isSealing checks if the current node is sealing blocks
 func (i *backendIBFT) isSealing() bool {
 	return i.sealing
+}
+
+func (i *backendIBFT) isSealingAndSigning() bool {
+	return i.sealAndSigning
 }
 
 // verifyHeaderImpl verifies fields including Extra

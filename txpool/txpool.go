@@ -89,6 +89,7 @@ type Config struct {
 	MaxSlots            uint64
 	MaxAccountEnqueued  uint64
 	Sealing             bool
+	SealingAndSigning   bool
 	DeploymentWhitelist []types.Address
 }
 
@@ -166,6 +167,8 @@ type TxPool struct {
 	// flag indicating if the current node is a sealer,
 	// and should therefore gossip transactions
 	sealing bool
+
+	sealAndSigning bool
 
 	// prometheus API
 	metrics *Metrics
@@ -791,7 +794,9 @@ func (p *TxPool) handlePromoteRequest(req promoteRequest) {
 // addGossipTx handles receiving transactions
 // gossiped by the network.
 func (p *TxPool) addGossipTx(obj interface{}, _ peer.ID) {
-	if !p.sealing {
+
+	//@madi so shall we gossip it if we are not sealAndSign
+	if !p.sealing && !p.sealAndSigning {
 		return
 	}
 

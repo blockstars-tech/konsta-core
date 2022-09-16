@@ -23,6 +23,7 @@ type Config struct {
 	Telemetry                *Telemetry `json:"telemetry" yaml:"telemetry"`
 	Network                  *Network   `json:"network" yaml:"network"`
 	ShouldSeal               bool       `json:"seal" yaml:"seal"`
+	ShouldSealAndSign     bool       `json:"sealAndSign" yaml:"sealAndSign"`
 	TxPool                   *TxPool    `json:"tx_pool" yaml:"tx_pool"`
 	LogLevel                 string     `json:"log_level" yaml:"log_level"`
 	RestoreFile              string     `json:"restore_file" yaml:"restore_file"`

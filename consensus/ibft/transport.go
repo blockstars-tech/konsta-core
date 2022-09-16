@@ -42,7 +42,7 @@ func (i *backendIBFT) setupTransport() error {
 
 				return
 			}
-
+			//@madi how we can know if its last signature?
 			if !i.isSealing() {
 				// if we are not sealing we do not care about the messages
 				// but we need to subscribe to propagate the messages

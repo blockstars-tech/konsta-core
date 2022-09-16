@@ -126,6 +126,13 @@ func setFlags(cmd *cobra.Command) {
 	)
 
 	cmd.Flags().BoolVar(
+		&params.rawConfig.ShouldSealAndSign,
+		sealAndSignFlag,
+		defaultConfig.ShouldSealAndSign,
+		"the flag indicating that the client should seal blocks and sign as notarius",
+	)
+
+	cmd.Flags().BoolVar(
 		&params.rawConfig.Network.NoDiscover,
 		command.NoDiscoverFlag,
 		defaultConfig.Network.NoDiscover,

@@ -374,6 +374,10 @@ func (t *TestServer) Start(ctx context.Context) error {
 		args = append(args, "--seal")
 	}
 
+	if t.Config.SealAndSign {
+		args = append(args, "--sealAndSign")
+	}
+
 	if t.Config.PriceLimit != nil {
 		args = append(args, "--price-limit", strconv.FormatUint(*t.Config.PriceLimit, 10))
 	}

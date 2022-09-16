@@ -22,6 +22,7 @@ const (
 	natFlag                      = "nat"
 	dnsFlag                      = "dns"
 	sealFlag                     = "seal"
+	sealAndSignFlag              = "sealAndSign"
 	maxPeersFlag                 = "max-peers"
 	maxInboundPeersFlag          = "max-inbound-peers"
 	maxOutboundPeersFlag         = "max-outbound-peers"
@@ -165,6 +166,7 @@ func (p *serverParams) generateConfig() *server.Config {
 		},
 		DataDir:            p.rawConfig.DataDir,
 		Seal:               p.rawConfig.ShouldSeal,
+		SealingAndSigning:  p.rawConfig.ShouldSealAndSign,
 		PriceLimit:         p.rawConfig.TxPool.PriceLimit,
 		MaxSlots:           p.rawConfig.TxPool.MaxSlots,
 		MaxAccountEnqueued: p.rawConfig.TxPool.MaxAccountEnqueued,
