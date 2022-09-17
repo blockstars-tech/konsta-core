@@ -1,1 +1,8 @@
-./konsta-signer genesis --consensus ibft --ibft-validator=0xbe3C39725304E9Ecb3341f45c90ca4d729dC0Cc4 --ibft-validator=0x0c142C3E47Cb5beF3116daB444De22ac08Ae4Fcc  --bootnode=/ip4/127.0.0.1/tcp/1478/p2p/16Uiu2HAmF4GioeQArEauwR9WoMVCqtKZNBLbT2sPgxjU46VBj4yg   --bootnode=/ip4/127.0.0.1/tcp/1478/p2p/16Uiu2HAkwhk4oDFme3qTA2a6niK3pZHgorYh1GmcX9EN1V8dCiwF  --premine=0xbe3C39725304E9Ecb3341f45c90ca4d729dC0Cc4:1000000000000000000000 --premine=0x0c142C3E47Cb5beF3116daB444De22ac08Ae4Fcc:1000000000000000000000
+./konsta-signer genesis --consensus ibft \
+--ibft-validator=0xbe3C39725304E9Ecb3341f45c90ca4d729dC0Cc4 \
+--ibft-validator=0x0c142C3E47Cb5beF3116daB444De22ac08Ae4Fcc \
+--bootnode=/ip4/127.0.0.1/tcp/1478/p2p/16Uiu2HAmF4GioeQArEauwR9WoMVCqtKZNBLbT2sPgxjU46VBj4yg \
+--bootnode=/ip4/127.0.0.1/tcp/1478/p2p/16Uiu2HAkwhk4oDFme3qTA2a6niK3pZHgorYh1GmcX9EN1V8dCiwF \
+--premine=0xbe3C39725304E9Ecb3341f45c90ca4d729dC0Cc4:1000000000000000000000 \
+--premine=0x0c142C3E47Cb5beF3116daB444De22ac08Ae4Fcc:1000000000000000000000 \
+--seal

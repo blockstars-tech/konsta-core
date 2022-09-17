@@ -80,6 +80,8 @@ func ParseValidator(validatorType ValidatorType, validator string) (Validator, e
 
 // ParseValidator parses an array of validator represented in string
 func ParseValidators(validatorType ValidatorType, rawValidators []string) (Validators, error) {
+	println(`hereeeeeeeeeeeehereeeeeeeeeeeehereeeeeeeeeeeehereeeeeeeeeeeehereeeeeeeeeeee`)
+	println(rawValidators)
 	set := NewValidatorSetFromType(validatorType)
 	if set == nil {
 		return nil, fmt.Errorf("invalid validator type: %s", validatorType)
