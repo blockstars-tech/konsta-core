@@ -1,7 +1,13 @@
 #/bin/bash
 
+# delete data folders
+rm -Rf ./konsta-non-signer
+rm -Rf ./konsta-signer
+
+# back to root
 cd ..
 
+# delete binaries and rebuild
 rm -Rf ./konsta-non-signer   
 go build -o konsta-non-signer .
 
@@ -9,26 +15,26 @@ rm -Rf ./konsta-signer
 go build -o konsta-signer .
 
 
-# cd ./buildTest/konsta-non-signer/data-dir && rm -rf ./blockchain && rm -rf ./trie && rm -rf ./consensus/metadata ./consensus/snapshots && cd ../../.. && rm -Rf ./buildTest/konsta-signer/konsta-signer
-# cd ./buildTest/konsta-signer/data-dir && rm -rf ./blockchain && rm -rf ./trie && rm -rf ./consensus/metadata ./consensus/snapshots && cd ../../.. && rm -Rf ./buildTest/konsta-non-signer/konsta-non-signer 
+# copy keys
+cp -Rf ./buildTest/validator-keys/us-1/ ./buildTest/konsta-signer/
+cp -Rf ./buildTest/validator-keys/us-2/ ./buildTest/konsta-non-signer/
 
-cp -Rf ./buildTest/validator-keys/us-1/data-dir ./buildTest/konsta-signer/
-cp -Rf ./buildTest/validator-keys/us-2/data-dir ./buildTest/konsta-non-signer/
-
-
-
+# copy binaries
 cp ./konsta-signer ./buildTest/konsta-signer/
 cp ./konsta-non-signer ./buildTest/konsta-non-signer/
 
+# copy genesises
 cp ./genesis.json ./buildTest/konsta-signer/
 cp ./genesis.json ./buildTest/konsta-non-signer/
 
-cd ./buildTest/konsta-signer
- ./konsta-signer server   --data-dir ./data-dir --chain genesis.json  --libp2p 0.0.0.0:2478  --grpc-address 0.0.0.0:1632  --jsonrpc 0.0.0.0:1541 --seal --sealAndSign
+# cd ./buildTest/konsta-signer
+#  ./konsta-signer server   --data-dir ./data-dir --chain genesis.json  --libp2p 0.0.0.0:2478  --grpc-address 0.0.0.0:1632  --jsonrpc 0.0.0.0:1541 --seal --sealAndSign
+
+# ////////////////////
 # cd ..
 
 # cd ./konsta-non-signer
-# ./konsta-non-signer server   --data-dir ./data-dir --chain genesis.json  --libp2p 0.0.0.0:1478  --grpc-address 0.0.0.0:2632  --jsonrpc 0.0.0.0:2541
+# ./konsta-non-signer server   --data-dir ./data-dir --chain genesis.json  --libp2p 0.0.0.0:1478  --grpc-address 0.0.0.0:2632  --jsonrpc 0.0.0.0:2541 --seal
 
 
 
