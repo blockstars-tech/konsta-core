@@ -7,6 +7,10 @@ rm -Rf ./konsta-signer
 # back to root
 cd ..
 
+
+
+# env GOOS=linux GOARCH=amd64
+
 # delete binaries and rebuild
 rm -Rf ./konsta-non-signer   
 go build -o konsta-non-signer .

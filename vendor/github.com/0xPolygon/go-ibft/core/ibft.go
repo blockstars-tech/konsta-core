@@ -364,9 +364,9 @@ func (i *IBFT) startRound(ctx context.Context) {
 		id   = i.backend.ID()
 		view = i.state.getView()
 	)
-
+	//@madi false = non-NT true or nothing = NT
 	// Check if any block needs to be proposed
-	if i.backend.IsProposer(id, view.Height, view.Round) && false{
+	if i.backend.IsProposer(id, view.Height, view.Round) {
 		i.log.Info("we are the proposer")
 
 		proposalMessage := i.buildProposal(ctx, view)
