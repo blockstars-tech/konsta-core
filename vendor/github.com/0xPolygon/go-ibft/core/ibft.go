@@ -364,7 +364,7 @@ func (i *IBFT) startRound(ctx context.Context) {
 		id   = i.backend.ID()
 		view = i.state.getView()
 	)
-	//@madi false = non-NT true or nothing = NT
+
 	// Check if any block needs to be proposed
 	if i.backend.IsProposer(id, view.Height, view.Round) {
 		i.log.Info("we are the proposer")
@@ -377,11 +377,11 @@ func (i *IBFT) startRound(ctx context.Context) {
 		}
 
 		i.acceptProposal(proposalMessage)
-		i.log.Info("block proposal accepted")
+		i.log.Debug("block proposal accepted")
 
 		i.sendPreprepareMessage(proposalMessage)
 
-		i.log.Info("pre-prepare message multicasted")
+		i.log.Debug("pre-prepare message multicasted")
 	}
 
 	i.runStates(ctx)
@@ -927,7 +927,7 @@ func (i *IBFT) buildProposal(ctx context.Context, view *proto.View) *proto.Messa
 		height = view.Height
 		round  = view.Round
 	)
-	i.log.Info("I AM NOTURIOUS", "............................................................" )
+
 	if round == 0 {
 		proposal := i.backend.BuildProposal(height)
 
