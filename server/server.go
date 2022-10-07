@@ -143,10 +143,10 @@ func NewServer(config *Config) (*Server, error) {
 	}
 
 	if config.Telemetry.PrometheusAddr != nil {
-		m.serverMetrics = metricProvider("polygon", config.Chain.Name, true)
+		m.serverMetrics = metricProvider("konsta", config.Chain.Name, true)
 		m.prometheusServer = m.startPrometheusServer(config.Telemetry.PrometheusAddr)
 	} else {
-		m.serverMetrics = metricProvider("polygon", config.Chain.Name, false)
+		m.serverMetrics = metricProvider("konsta", config.Chain.Name, false)
 	}
 
 	// Set up the secrets manager

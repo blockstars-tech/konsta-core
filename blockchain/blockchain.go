@@ -1243,7 +1243,7 @@ func (b *Blockchain) GetForks() ([]types.Hash, error) {
 	return b.db.ReadForks()
 }
 
-// GetBlockByHash returns the block using the block hash
+// GetBlockByHash returns the block using the block hash blockchain package
 func (b *Blockchain) GetBlockByHash(hash types.Hash, full bool) (*types.Block, bool) {
 	header, ok := b.readHeader(hash)
 	if !ok {

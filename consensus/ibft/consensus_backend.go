@@ -1,7 +1,7 @@
 package ibft
 
 import (
-	"fmt"
+	// "fmt"
 	"math"
 	"time"
 
@@ -295,35 +295,36 @@ func (i *backendIBFT) writeTransaction(
 	if tx == nil {
 		return nil, false
 	}
-
+//@madi
 	if tx.ExceedsBlockGasLimit(gasLimit) {
-		i.txpool.Drop(tx)
+		i.txpool.Demote(tx)
 
-		if err := transition.WriteFailedReceipt(tx); err != nil {
-			i.logger.Error(
-				fmt.Sprintf(
-					"unable to write failed receipt for transaction %s",
-					tx.Hash,
-				),
-			)
-		}
+		// if err := transition.WriteFailedReceipt(tx); err != nil {
+		// 	i.logger.Error(
+		// 		fmt.Sprintf(
+		// 			"unable to write failed receipt for transaction %s",
+		// 			tx.Hash,
+		// 		),
+		// 	)
+		// }
 
 		// continue processing
-		return &txExeResult{tx, fail}, true
+		return &txExeResult{tx, skip}, true
 	}
 
 	if err := transition.Write(tx); err != nil {
 		if _, ok := err.(*state.GasLimitReachedTransitionApplicationError); ok { //nolint:errorlint
-			// stop processing
-			return nil, false
+			i.txpool.Demote(tx)
+
+			return &txExeResult{tx, skip}, true
 		} else if appErr, ok := err.(*state.TransitionApplicationError); ok && appErr.IsRecoverable { //nolint:errorlint
 			i.txpool.Demote(tx)
 
 			return &txExeResult{tx, skip}, true
 		} else {
-			i.txpool.Drop(tx)
+			i.txpool.Demote(tx)
 
-			return &txExeResult{tx, fail}, true
+			return &txExeResult{tx, skip}, true
 		}
 	}
 

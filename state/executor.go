@@ -215,20 +215,20 @@ func (t *Transition) WriteFailedReceipt(txn *types.Transaction) error {
 
 		txn.From = from
 	}
+//@madi
+	// receipt := &types.Receipt{
+	// 	CumulativeGasUsed: t.totalGas,
+	// 	TxHash:            txn.Hash,
+	// 	Logs:              t.state.Logs(),
+	// }
 
-	receipt := &types.Receipt{
-		CumulativeGasUsed: t.totalGas,
-		TxHash:            txn.Hash,
-		Logs:              t.state.Logs(),
-	}
+	// receipt.LogsBloom = types.CreateBloom([]*types.Receipt{receipt})
+	// receipt.SetStatus(types.ReceiptFailed)
+	// t.receipts = append(t.receipts, receipt)
 
-	receipt.LogsBloom = types.CreateBloom([]*types.Receipt{receipt})
-	receipt.SetStatus(types.ReceiptFailed)
-	t.receipts = append(t.receipts, receipt)
-
-	if txn.To == nil {
-		receipt.ContractAddress = crypto.CreateAddress(txn.From, txn.Nonce).Ptr()
-	}
+	// if txn.To == nil {
+	// 	receipt.ContractAddress = crypto.CreateAddress(txn.From, txn.Nonce).Ptr()
+	// }
 
 	return nil
 }

@@ -25,3 +25,6 @@ artifacts
 # Log files
 *.log
 data-dir
+
+linuxBuilds
+macBuilds

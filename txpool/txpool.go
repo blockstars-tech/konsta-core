@@ -468,10 +468,10 @@ func (p *TxPool) Demote(tx *types.Transaction) {
 			"addr", tx.From.String(),
 		)
 
-		p.Drop(tx)
+		// p.Drop(tx)
 
-		// reset the demotions counter
-		account.demotions = 0
+		// // reset the demotions counter
+		// account.demotions = 0
 
 		return
 	}
@@ -696,7 +696,7 @@ func (p *TxPool) pruneAccountsWithNonceHoles() {
 // successful, an account is created for this address
 // (only once) and an enqueueRequest is signaled.
 func (p *TxPool) addTx(origin txOrigin, tx *types.Transaction) error {
-	p.logger.Debug("add tx",
+	p.logger.Info("add tx",
 		"origin", origin.String(),
 		"hash", tx.Hash.String(),
 	)
@@ -784,7 +784,7 @@ func (p *TxPool) handlePromoteRequest(req promoteRequest) {
 
 	// promote enqueued txs
 	promoted := account.promote()
-	p.logger.Debug("promote request", "promoted", promoted, "addr", addr.String())
+	p.logger.Info("promote request", "promoted", promoted, "addr", addr.String())
 
 	// update metrics
 	p.metrics.PendingTxs.Add(float64(len(promoted)))
@@ -792,11 +792,11 @@ func (p *TxPool) handlePromoteRequest(req promoteRequest) {
 }
 
 // addGossipTx handles receiving transactions
-// gossiped by the network.
+// gossiped by the network. //@madi need changes
 func (p *TxPool) addGossipTx(obj interface{}, _ peer.ID) {
 
 	//@madi so shall we gossip it if we are not sealAndSign
-	if !p.sealing && !p.sealAndSigning {
+	if !p.sealing  {
 		return
 	}
 
