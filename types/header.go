@@ -9,7 +9,7 @@ import (
 	"fmt"
 	"sync/atomic"
 
-	"github.com/0xPolygon/polygon-edge/helper/hex"
+	"konsta.live/helper/hex"
 )
 
 // Header represents a block header in the Ethereum blockchain.

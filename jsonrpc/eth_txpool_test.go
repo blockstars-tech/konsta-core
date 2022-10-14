@@ -4,10 +4,10 @@ import (
 	"math/big"
 	"testing"
 
-	"github.com/0xPolygon/polygon-edge/helper/hex"
-	"github.com/0xPolygon/polygon-edge/state"
-	"github.com/0xPolygon/polygon-edge/types"
 	"github.com/stretchr/testify/assert"
+	"konsta.live/helper/hex"
+	"konsta.live/state"
+	"konsta.live/types"
 )
 
 func TestEth_TxnPool_SendRawTransaction(t *testing.T) {

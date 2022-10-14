@@ -4,8 +4,8 @@ import (
 	"errors"
 	"math/big"
 
-	"github.com/0xPolygon/polygon-edge/chain"
-	"github.com/0xPolygon/polygon-edge/types"
+	"konsta.live/chain"
+	"konsta.live/types"
 )
 
 // TxContext is the context of the transaction

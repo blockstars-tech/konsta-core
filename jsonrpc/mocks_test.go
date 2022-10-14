@@ -5,9 +5,9 @@ import (
 	"math/big"
 	"sync"
 
-	"github.com/0xPolygon/polygon-edge/blockchain"
-	"github.com/0xPolygon/polygon-edge/state"
-	"github.com/0xPolygon/polygon-edge/types"
+	"konsta.live/blockchain"
+	"konsta.live/state"
+	"konsta.live/types"
 )
 
 type mockAccount struct {

@@ -1,6 +1,6 @@
 package subscribe
 
-import "github.com/0xPolygon/polygon-edge/txpool/proto"
+import "konsta.live/txpool/proto"
 
 var (
 	params = &subscribeParams{}

@@ -5,9 +5,9 @@ import (
 
 	"github.com/hashicorp/go-hclog"
 
-	"github.com/0xPolygon/polygon-edge/chain"
-	"github.com/0xPolygon/polygon-edge/network"
-	"github.com/0xPolygon/polygon-edge/secrets"
+	"konsta.live/chain"
+	"konsta.live/network"
+	"konsta.live/secrets"
 )
 
 const DefaultGRPCPort int = 9632

@@ -6,10 +6,10 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/0xPolygon/polygon-edge/command"
-	"github.com/0xPolygon/polygon-edge/command/server/config"
 	"github.com/spf13/cobra"
 	"gopkg.in/yaml.v3"
+	"konsta.live/command"
+	"konsta.live/command/server/config"
 )
 
 func GetCommand() *cobra.Command {

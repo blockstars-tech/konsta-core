@@ -6,10 +6,10 @@ import (
 	"math/big"
 	"math/bits"
 
-	"github.com/0xPolygon/polygon-edge/chain"
-	"github.com/0xPolygon/polygon-edge/helper/keccak"
-	"github.com/0xPolygon/polygon-edge/types"
 	"github.com/umbracle/fastrlp"
+	"konsta.live/chain"
+	"konsta.live/helper/keccak"
+	"konsta.live/types"
 )
 
 // TxSigner is a utility interface used to recover data from a transaction

@@ -6,10 +6,10 @@ import (
 	"fmt"
 	"sync"
 
-	"github.com/0xPolygon/polygon-edge/types"
-	"github.com/0xPolygon/polygon-edge/validators"
-	"github.com/0xPolygon/polygon-edge/validators/store"
 	"github.com/hashicorp/go-hclog"
+	"konsta.live/types"
+	"konsta.live/validators"
+	"konsta.live/validators/store"
 )
 
 const (

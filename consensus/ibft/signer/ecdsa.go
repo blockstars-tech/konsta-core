@@ -4,11 +4,11 @@ import (
 	"crypto/ecdsa"
 	"fmt"
 
-	"github.com/0xPolygon/polygon-edge/crypto"
-	"github.com/0xPolygon/polygon-edge/secrets"
-	"github.com/0xPolygon/polygon-edge/types"
-	"github.com/0xPolygon/polygon-edge/validators"
 	"github.com/umbracle/fastrlp"
+	"konsta.live/crypto"
+	"konsta.live/secrets"
+	"konsta.live/types"
+	"konsta.live/validators"
 )
 
 // ECDSAKeyManager is a module that holds ECDSA key

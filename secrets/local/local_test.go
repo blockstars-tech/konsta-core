@@ -5,12 +5,12 @@ import (
 	"os"
 	"testing"
 
-	"github.com/0xPolygon/polygon-edge/crypto"
-	"github.com/0xPolygon/polygon-edge/helper/common"
-	"github.com/0xPolygon/polygon-edge/secrets"
 	"github.com/hashicorp/go-hclog"
 	libp2pCrypto "github.com/libp2p/go-libp2p/core/crypto"
 	"github.com/stretchr/testify/assert"
+	"konsta.live/crypto"
+	"konsta.live/helper/common"
+	"konsta.live/secrets"
 )
 
 func TestLocalSecretsManagerFactory(t *testing.T) {

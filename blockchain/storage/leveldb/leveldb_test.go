@@ -4,8 +4,8 @@ import (
 	"os"
 	"testing"
 
-	"github.com/0xPolygon/polygon-edge/blockchain/storage"
 	"github.com/hashicorp/go-hclog"
+	"konsta.live/blockchain/storage"
 )
 
 func newStorage(t *testing.T) (storage.Storage, func()) {

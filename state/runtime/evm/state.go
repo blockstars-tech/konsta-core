@@ -7,10 +7,10 @@ import (
 
 	"sync"
 
-	"github.com/0xPolygon/polygon-edge/chain"
-	"github.com/0xPolygon/polygon-edge/helper/hex"
-	"github.com/0xPolygon/polygon-edge/state/runtime"
-	"github.com/0xPolygon/polygon-edge/types"
+	"konsta.live/chain"
+	"konsta.live/helper/hex"
+	"konsta.live/state/runtime"
+	"konsta.live/types"
 )
 
 var statePool = sync.Pool{

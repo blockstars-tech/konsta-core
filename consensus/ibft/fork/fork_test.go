@@ -6,11 +6,11 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/0xPolygon/polygon-edge/helper/common"
-	testHelper "github.com/0xPolygon/polygon-edge/helper/tests"
-	"github.com/0xPolygon/polygon-edge/types"
-	"github.com/0xPolygon/polygon-edge/validators"
 	"github.com/stretchr/testify/assert"
+	"konsta.live/helper/common"
+	testHelper "konsta.live/helper/tests"
+	"konsta.live/types"
+	"konsta.live/validators"
 )
 
 func TestIBFTForkUnmarshalJSON(t *testing.T) {

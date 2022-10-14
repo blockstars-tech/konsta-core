@@ -6,10 +6,10 @@ import (
 
 	"github.com/umbracle/ethgo"
 
-	"github.com/0xPolygon/polygon-edge/contracts/abis"
-	"github.com/0xPolygon/polygon-edge/state/runtime"
-	"github.com/0xPolygon/polygon-edge/types"
 	"github.com/umbracle/ethgo/abi"
+	"konsta.live/contracts/abis"
+	"konsta.live/state/runtime"
+	"konsta.live/types"
 )
 
 const (

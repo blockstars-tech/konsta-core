@@ -5,10 +5,10 @@ import (
 	"math/big"
 	"testing"
 
-	"github.com/0xPolygon/polygon-edge/contracts/abis"
-	"github.com/0xPolygon/polygon-edge/state/runtime"
-	"github.com/0xPolygon/polygon-edge/types"
 	"github.com/stretchr/testify/assert"
+	"konsta.live/contracts/abis"
+	"konsta.live/state/runtime"
+	"konsta.live/types"
 )
 
 var (

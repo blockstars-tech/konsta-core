@@ -3,11 +3,11 @@ package contract
 import (
 	"fmt"
 
-	"github.com/0xPolygon/polygon-edge/contracts/staking"
-	"github.com/0xPolygon/polygon-edge/crypto"
-	"github.com/0xPolygon/polygon-edge/state"
-	"github.com/0xPolygon/polygon-edge/types"
-	"github.com/0xPolygon/polygon-edge/validators"
+	"konsta.live/contracts/staking"
+	"konsta.live/crypto"
+	"konsta.live/state"
+	"konsta.live/types"
+	"konsta.live/validators"
 )
 
 // FetchValidators fetches validators from a contract switched by validator type

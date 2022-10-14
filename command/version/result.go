@@ -3,7 +3,7 @@ package version
 import (
 	"bytes"
 	"fmt"
-	"github.com/0xPolygon/polygon-edge/command/helper"
+	"konsta.live/command/helper"
 )
 
 type VersionResult struct {

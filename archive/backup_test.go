@@ -7,12 +7,12 @@ import (
 	"io"
 	"testing"
 
-	"github.com/0xPolygon/polygon-edge/server/proto"
-	"github.com/0xPolygon/polygon-edge/types"
 	"github.com/hashicorp/go-hclog"
 	"github.com/stretchr/testify/assert"
 	"google.golang.org/grpc"
 	"google.golang.org/protobuf/types/known/emptypb"
+	"konsta.live/server/proto"
+	"konsta.live/types"
 )
 
 type recvData struct {

@@ -4,8 +4,8 @@ import (
 	"bytes"
 	"fmt"
 
-	"github.com/0xPolygon/polygon-edge/command/helper"
-	"github.com/0xPolygon/polygon-edge/types"
+	"konsta.live/command/helper"
+	"konsta.live/types"
 )
 
 type SecretsInitResult struct {

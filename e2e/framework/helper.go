@@ -13,19 +13,19 @@ import (
 	"testing"
 	"time"
 
-	"github.com/0xPolygon/polygon-edge/contracts/abis"
-	"github.com/0xPolygon/polygon-edge/contracts/staking"
-	"github.com/0xPolygon/polygon-edge/crypto"
-	"github.com/0xPolygon/polygon-edge/helper/hex"
-	"github.com/0xPolygon/polygon-edge/helper/tests"
-	"github.com/0xPolygon/polygon-edge/server/proto"
-	txpoolProto "github.com/0xPolygon/polygon-edge/txpool/proto"
-	"github.com/0xPolygon/polygon-edge/types"
 	"github.com/stretchr/testify/assert"
 	"github.com/umbracle/ethgo"
 	"github.com/umbracle/ethgo/jsonrpc"
 	"golang.org/x/crypto/sha3"
 	empty "google.golang.org/protobuf/types/known/emptypb"
+	"konsta.live/contracts/abis"
+	"konsta.live/contracts/staking"
+	"konsta.live/crypto"
+	"konsta.live/helper/hex"
+	"konsta.live/helper/tests"
+	"konsta.live/server/proto"
+	txpoolProto "konsta.live/txpool/proto"
+	"konsta.live/types"
 )
 
 var (

@@ -1,10 +1,10 @@
 package license
 
 import (
-	"github.com/0xPolygon/polygon-edge/command"
 	"github.com/spf13/cobra"
+	"konsta.live/command"
 
-	"github.com/0xPolygon/polygon-edge/licenses"
+	"konsta.live/licenses"
 )
 
 func GetCommand() *cobra.Command {

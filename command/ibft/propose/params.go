@@ -7,11 +7,11 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/0xPolygon/polygon-edge/command"
-	"github.com/0xPolygon/polygon-edge/command/helper"
-	ibftOp "github.com/0xPolygon/polygon-edge/consensus/ibft/proto"
-	"github.com/0xPolygon/polygon-edge/crypto"
-	"github.com/0xPolygon/polygon-edge/types"
+	"konsta.live/command"
+	"konsta.live/command/helper"
+	ibftOp "konsta.live/consensus/ibft/proto"
+	"konsta.live/crypto"
+	"konsta.live/types"
 )
 
 const (

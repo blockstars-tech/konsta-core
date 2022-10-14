@@ -5,7 +5,7 @@ import (
 	"sync"
 	"sync/atomic"
 
-	"github.com/0xPolygon/polygon-edge/types"
+	"konsta.live/types"
 )
 
 // A thread-safe wrapper of a minNonceQueue.

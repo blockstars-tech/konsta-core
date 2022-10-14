@@ -6,11 +6,11 @@ import (
 	"testing"
 	"time"
 
-	"github.com/0xPolygon/polygon-edge/blockchain"
-	"github.com/0xPolygon/polygon-edge/types"
 	"github.com/gorilla/websocket"
 	"github.com/hashicorp/go-hclog"
 	"github.com/stretchr/testify/assert"
+	"konsta.live/blockchain"
+	"konsta.live/types"
 )
 
 func Test_GetLogsForQuery(t *testing.T) {

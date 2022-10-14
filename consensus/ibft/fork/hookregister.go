@@ -1,7 +1,7 @@
 package fork
 
 import (
-	"github.com/0xPolygon/polygon-edge/consensus/ibft/hook"
+	"konsta.live/consensus/ibft/hook"
 )
 
 // PoAHookRegisterer that registers hooks for PoA mode

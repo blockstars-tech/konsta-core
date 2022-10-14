@@ -1,10 +1,10 @@
 package buildroot
 
 import (
-	"github.com/0xPolygon/polygon-edge/helper/keccak"
-	itrie "github.com/0xPolygon/polygon-edge/state/immutable-trie"
-	"github.com/0xPolygon/polygon-edge/types"
 	"github.com/umbracle/fastrlp"
+	"konsta.live/helper/keccak"
+	itrie "konsta.live/state/immutable-trie"
+	"konsta.live/types"
 )
 
 var arenaPool fastrlp.ArenaPool

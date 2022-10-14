@@ -6,15 +6,15 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/0xPolygon/polygon-edge/network/common"
-	"github.com/0xPolygon/polygon-edge/network/event"
 	"github.com/hashicorp/go-hclog"
 	"github.com/libp2p/go-libp2p/core/network"
+	"konsta.live/network/common"
+	"konsta.live/network/event"
 
-	"github.com/0xPolygon/polygon-edge/network/grpc"
-	"github.com/0xPolygon/polygon-edge/network/proto"
 	kb "github.com/libp2p/go-libp2p-kbucket"
 	"github.com/libp2p/go-libp2p/core/peer"
+	"konsta.live/network/grpc"
+	"konsta.live/network/proto"
 )
 
 const (

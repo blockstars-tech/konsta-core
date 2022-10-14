@@ -6,9 +6,9 @@ import (
 	"os"
 	"strings"
 
-	"github.com/0xPolygon/polygon-edge/network"
 	"github.com/hashicorp/hcl"
 	"gopkg.in/yaml.v3"
+	"konsta.live/network"
 )
 
 // Config defines the server configuration params

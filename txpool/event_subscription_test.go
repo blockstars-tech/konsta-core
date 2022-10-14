@@ -10,10 +10,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/0xPolygon/polygon-edge/helper/tests"
-	"github.com/0xPolygon/polygon-edge/txpool/proto"
-	"github.com/0xPolygon/polygon-edge/types"
 	"github.com/stretchr/testify/assert"
+	"konsta.live/helper/tests"
+	"konsta.live/txpool/proto"
+	"konsta.live/types"
 )
 
 func shuffleTxPoolEvents(

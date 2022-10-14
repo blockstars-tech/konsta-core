@@ -6,12 +6,12 @@ import (
 	"math/big"
 	"testing"
 
-	"github.com/0xPolygon/polygon-edge/blockchain"
-	"github.com/0xPolygon/polygon-edge/helper/hex"
-	"github.com/0xPolygon/polygon-edge/helper/progress"
-	"github.com/0xPolygon/polygon-edge/state/runtime"
-	"github.com/0xPolygon/polygon-edge/types"
 	"github.com/stretchr/testify/assert"
+	"konsta.live/blockchain"
+	"konsta.live/helper/hex"
+	"konsta.live/helper/progress"
+	"konsta.live/state/runtime"
+	"konsta.live/types"
 )
 
 func TestEth_Block_GetBlockByNumber(t *testing.T) {

@@ -32,13 +32,13 @@ cp ./genesis.json ./buildTest/konsta-signer/
 cp ./genesis.json ./buildTest/konsta-non-signer/
 
 # cd ./buildTest/konsta-signer
-#  ./konsta-signer server   --data-dir ./data-dir --chain genesis.json  --libp2p 0.0.0.0:2478  --grpc-address 0.0.0.0:1632  --jsonrpc 0.0.0.0:1541 --seal --sealAndSign
+#us1= server   --data-dir ./data-dir --chain genesis.json  --libp2p 0.0.0.0:2478  --grpc-address 0.0.0.0:1632  --jsonrpc 0.0.0.0:1541 --seal --sealAndSign
 
 # ////////////////////
 # cd ..
 
 # cd ./konsta-non-signer
-# ./konsta-non-signer server   --data-dir ./data-dir --chain genesis.json  --libp2p 0.0.0.0:2478  --grpc-address 0.0.0.0:2632  --jsonrpc 0.0.0.0:2541 --seal
+#us2= server   --data-dir ./data-dir --chain genesis.json  --libp2p 0.0.0.0:1478  --grpc-address 0.0.0.0:2632  --jsonrpc 0.0.0.0:2541 --seal
 
 
 

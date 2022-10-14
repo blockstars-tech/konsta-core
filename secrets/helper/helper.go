@@ -3,16 +3,16 @@ package helper
 import (
 	"fmt"
 
-	"github.com/0xPolygon/polygon-edge/crypto"
-	"github.com/0xPolygon/polygon-edge/network"
-	"github.com/0xPolygon/polygon-edge/secrets"
-	"github.com/0xPolygon/polygon-edge/secrets/awsssm"
-	"github.com/0xPolygon/polygon-edge/secrets/gcpssm"
-	"github.com/0xPolygon/polygon-edge/secrets/hashicorpvault"
-	"github.com/0xPolygon/polygon-edge/secrets/local"
-	"github.com/0xPolygon/polygon-edge/types"
 	"github.com/hashicorp/go-hclog"
 	libp2pCrypto "github.com/libp2p/go-libp2p/core/crypto"
+	"konsta.live/crypto"
+	"konsta.live/network"
+	"konsta.live/secrets"
+	"konsta.live/secrets/awsssm"
+	"konsta.live/secrets/gcpssm"
+	"konsta.live/secrets/hashicorpvault"
+	"konsta.live/secrets/local"
+	"konsta.live/types"
 )
 
 // SetupLocalSecretsManager is a helper method for boilerplate local secrets manager setup

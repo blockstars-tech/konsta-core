@@ -4,8 +4,8 @@ import (
 	"errors"
 	"testing"
 
-	testHelper "github.com/0xPolygon/polygon-edge/helper/tests"
 	"github.com/stretchr/testify/assert"
+	testHelper "konsta.live/helper/tests"
 )
 
 func TestIBFTTypeString(t *testing.T) {

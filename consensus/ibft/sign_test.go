@@ -3,9 +3,9 @@ package ibft
 import (
 	"testing"
 
-	"github.com/0xPolygon/polygon-edge/consensus/ibft/signer"
-	"github.com/0xPolygon/polygon-edge/types"
 	"github.com/stretchr/testify/assert"
+	"konsta.live/consensus/ibft/signer"
+	"konsta.live/types"
 )
 
 func TestSign_Sealer(t *testing.T) {

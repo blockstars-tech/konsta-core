@@ -1,8 +1,8 @@
 package hook
 
 import (
-	"github.com/0xPolygon/polygon-edge/state"
-	"github.com/0xPolygon/polygon-edge/types"
+	"konsta.live/state"
+	"konsta.live/types"
 )
 
 type ShouldWriteTransactionsFunc func(uint64) bool

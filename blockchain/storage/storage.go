@@ -3,8 +3,8 @@ package storage
 import (
 	"math/big"
 
-	"github.com/0xPolygon/polygon-edge/types"
 	"github.com/hashicorp/go-hclog"
+	"konsta.live/types"
 )
 
 // Storage is a generic blockchain storage

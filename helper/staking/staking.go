@@ -4,12 +4,12 @@ import (
 	"fmt"
 	"math/big"
 
-	"github.com/0xPolygon/polygon-edge/chain"
-	"github.com/0xPolygon/polygon-edge/helper/common"
-	"github.com/0xPolygon/polygon-edge/helper/hex"
-	"github.com/0xPolygon/polygon-edge/helper/keccak"
-	"github.com/0xPolygon/polygon-edge/types"
-	"github.com/0xPolygon/polygon-edge/validators"
+	"konsta.live/chain"
+	"konsta.live/helper/common"
+	"konsta.live/helper/hex"
+	"konsta.live/helper/keccak"
+	"konsta.live/types"
+	"konsta.live/validators"
 )
 
 var (

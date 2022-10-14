@@ -4,7 +4,7 @@ import (
 	"net"
 	"testing"
 
-	"github.com/0xPolygon/polygon-edge/helper/tests"
+	"konsta.live/helper/tests"
 
 	"github.com/hashicorp/go-hclog"
 )

@@ -12,12 +12,12 @@ import (
 	"go.uber.org/atomic"
 	"google.golang.org/grpc"
 
-	"github.com/0xPolygon/polygon-edge/blockchain"
-	"github.com/0xPolygon/polygon-edge/chain"
-	"github.com/0xPolygon/polygon-edge/network"
-	"github.com/0xPolygon/polygon-edge/state"
-	"github.com/0xPolygon/polygon-edge/txpool/proto"
-	"github.com/0xPolygon/polygon-edge/types"
+	"konsta.live/blockchain"
+	"konsta.live/chain"
+	"konsta.live/network"
+	"konsta.live/state"
+	"konsta.live/txpool/proto"
+	"konsta.live/types"
 )
 
 const (

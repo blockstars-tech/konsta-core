@@ -9,13 +9,13 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/0xPolygon/polygon-edge/chain"
-	"github.com/0xPolygon/polygon-edge/crypto"
-	"github.com/0xPolygon/polygon-edge/helper/hex"
-	"github.com/0xPolygon/polygon-edge/state"
-	itrie "github.com/0xPolygon/polygon-edge/state/immutable-trie"
-	"github.com/0xPolygon/polygon-edge/state/runtime"
-	"github.com/0xPolygon/polygon-edge/types"
+	"konsta.live/chain"
+	"konsta.live/crypto"
+	"konsta.live/helper/hex"
+	"konsta.live/state"
+	itrie "konsta.live/state/immutable-trie"
+	"konsta.live/state/runtime"
+	"konsta.live/types"
 )
 
 // TESTS is the default location of the tests folder

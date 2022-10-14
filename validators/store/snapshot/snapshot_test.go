@@ -7,13 +7,13 @@ import (
 	"sync"
 	"testing"
 
-	"github.com/0xPolygon/polygon-edge/crypto"
-	testHelper "github.com/0xPolygon/polygon-edge/helper/tests"
-	"github.com/0xPolygon/polygon-edge/types"
-	"github.com/0xPolygon/polygon-edge/validators"
-	"github.com/0xPolygon/polygon-edge/validators/store"
 	"github.com/hashicorp/go-hclog"
 	"github.com/stretchr/testify/assert"
+	"konsta.live/crypto"
+	testHelper "konsta.live/helper/tests"
+	"konsta.live/types"
+	"konsta.live/validators"
+	"konsta.live/validators/store"
 )
 
 var (

@@ -5,14 +5,14 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/0xPolygon/polygon-edge/crypto"
-	"github.com/0xPolygon/polygon-edge/helper/keccak"
-	"github.com/0xPolygon/polygon-edge/secrets"
-	"github.com/0xPolygon/polygon-edge/secrets/helper"
-	"github.com/0xPolygon/polygon-edge/types"
-	"github.com/0xPolygon/polygon-edge/validators"
 	"github.com/coinbase/kryptology/pkg/signatures/bls/bls_sig"
 	"github.com/umbracle/fastrlp"
+	"konsta.live/crypto"
+	"konsta.live/helper/keccak"
+	"konsta.live/secrets"
+	"konsta.live/secrets/helper"
+	"konsta.live/types"
+	"konsta.live/validators"
 )
 
 const (

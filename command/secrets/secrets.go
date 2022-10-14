@@ -1,10 +1,10 @@
 package secrets
 
 import (
-	"github.com/0xPolygon/polygon-edge/command/helper"
-	"github.com/0xPolygon/polygon-edge/command/secrets/generate"
-	initCmd "github.com/0xPolygon/polygon-edge/command/secrets/init"
 	"github.com/spf13/cobra"
+	"konsta.live/command/helper"
+	"konsta.live/command/secrets/generate"
+	initCmd "konsta.live/command/secrets/init"
 )
 
 func GetCommand() *cobra.Command {

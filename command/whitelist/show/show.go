@@ -3,8 +3,8 @@ package show
 import (
 	"fmt"
 
-	"github.com/0xPolygon/polygon-edge/command"
 	"github.com/spf13/cobra"
+	"konsta.live/command"
 )
 
 func GetCommand() *cobra.Command {

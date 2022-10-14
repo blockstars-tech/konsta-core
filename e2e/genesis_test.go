@@ -5,11 +5,11 @@ import (
 	"testing"
 	"time"
 
-	"github.com/0xPolygon/polygon-edge/command"
+	"konsta.live/command"
 
-	"github.com/0xPolygon/polygon-edge/e2e/framework"
-	"github.com/0xPolygon/polygon-edge/helper/tests"
 	"github.com/stretchr/testify/assert"
+	"konsta.live/e2e/framework"
+	"konsta.live/helper/tests"
 )
 
 // TestGenesisBlockGasLimit tests the genesis block limit setting

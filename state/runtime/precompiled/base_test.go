@@ -4,8 +4,8 @@ package precompiled
 import (
 	"testing"
 
-	"github.com/0xPolygon/polygon-edge/helper/hex"
 	"github.com/stretchr/testify/assert"
+	"konsta.live/helper/hex"
 )
 
 type precompiledTest struct {

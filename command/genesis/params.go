@@ -4,17 +4,17 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/0xPolygon/polygon-edge/chain"
-	"github.com/0xPolygon/polygon-edge/command"
-	"github.com/0xPolygon/polygon-edge/command/helper"
-	"github.com/0xPolygon/polygon-edge/consensus/ibft"
-	"github.com/0xPolygon/polygon-edge/consensus/ibft/fork"
-	"github.com/0xPolygon/polygon-edge/consensus/ibft/signer"
-	"github.com/0xPolygon/polygon-edge/contracts/staking"
-	stakingHelper "github.com/0xPolygon/polygon-edge/helper/staking"
-	"github.com/0xPolygon/polygon-edge/server"
-	"github.com/0xPolygon/polygon-edge/types"
-	"github.com/0xPolygon/polygon-edge/validators"
+	"konsta.live/chain"
+	"konsta.live/command"
+	"konsta.live/command/helper"
+	"konsta.live/consensus/ibft"
+	"konsta.live/consensus/ibft/fork"
+	"konsta.live/consensus/ibft/signer"
+	"konsta.live/contracts/staking"
+	stakingHelper "konsta.live/helper/staking"
+	"konsta.live/server"
+	"konsta.live/types"
+	"konsta.live/validators"
 )
 
 const (

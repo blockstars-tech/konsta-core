@@ -8,11 +8,11 @@ import (
 	"testing"
 	"time"
 
-	"github.com/0xPolygon/polygon-edge/crypto"
-	"github.com/0xPolygon/polygon-edge/e2e/framework"
-	"github.com/0xPolygon/polygon-edge/helper/tests"
-	"github.com/0xPolygon/polygon-edge/types"
 	"github.com/stretchr/testify/assert"
+	"konsta.live/crypto"
+	"konsta.live/e2e/framework"
+	"konsta.live/helper/tests"
+	"konsta.live/types"
 )
 
 func TestBroadcast(t *testing.T) {

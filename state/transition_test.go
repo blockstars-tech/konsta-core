@@ -4,10 +4,10 @@ import (
 	"math/big"
 	"testing"
 
-	"github.com/0xPolygon/polygon-edge/state/runtime"
-	"github.com/0xPolygon/polygon-edge/types"
 	"github.com/hashicorp/go-hclog"
 	"github.com/stretchr/testify/assert"
+	"konsta.live/state/runtime"
+	"konsta.live/types"
 )
 
 func newTestTransition(preState map[types.Address]*PreState) *Transition {

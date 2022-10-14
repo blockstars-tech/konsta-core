@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/0xPolygon/polygon-edge/types"
+	"konsta.live/types"
 )
 
 var addr1 = types.StringToAddress("1")

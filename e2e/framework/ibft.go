@@ -6,7 +6,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/0xPolygon/polygon-edge/types"
+	"konsta.live/types"
 )
 
 type IBFTServersManager struct {

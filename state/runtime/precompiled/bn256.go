@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"math/big"
 
-	"github.com/0xPolygon/polygon-edge/chain"
 	bn256 "github.com/umbracle/go-eth-bn256"
+	"konsta.live/chain"
 )
 
 type bn256Add struct {

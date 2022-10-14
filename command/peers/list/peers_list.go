@@ -3,11 +3,11 @@ package list
 import (
 	"context"
 
-	"github.com/0xPolygon/polygon-edge/command"
-	"github.com/0xPolygon/polygon-edge/command/helper"
-	"github.com/0xPolygon/polygon-edge/server/proto"
 	"github.com/spf13/cobra"
 	empty "google.golang.org/protobuf/types/known/emptypb"
+	"konsta.live/command"
+	"konsta.live/command/helper"
+	"konsta.live/server/proto"
 )
 
 func GetCommand() *cobra.Command {

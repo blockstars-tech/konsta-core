@@ -7,11 +7,11 @@ import (
 	"math/big"
 	"testing"
 
-	"github.com/0xPolygon/polygon-edge/helper/hex"
-	"github.com/0xPolygon/polygon-edge/types"
 	"github.com/stretchr/testify/assert"
 	"github.com/umbracle/fastrlp"
 	"golang.org/x/crypto/sha3"
+	"konsta.live/helper/hex"
+	"konsta.live/types"
 )
 
 type mockState struct {

@@ -3,16 +3,16 @@ package network
 import (
 	"math/big"
 
-	"github.com/0xPolygon/polygon-edge/network/common"
-	peerEvent "github.com/0xPolygon/polygon-edge/network/event"
-	"github.com/0xPolygon/polygon-edge/network/grpc"
-	"github.com/0xPolygon/polygon-edge/network/identity"
-	"github.com/0xPolygon/polygon-edge/network/proto"
 	kbucket "github.com/libp2p/go-libp2p-kbucket"
 	"github.com/libp2p/go-libp2p-kbucket/keyspace"
 	"github.com/libp2p/go-libp2p/core/network"
 	"github.com/libp2p/go-libp2p/core/peer"
 	rawGrpc "google.golang.org/grpc"
+	"konsta.live/network/common"
+	peerEvent "konsta.live/network/event"
+	"konsta.live/network/grpc"
+	"konsta.live/network/identity"
+	"konsta.live/network/proto"
 )
 
 // NewIdentityClient returns a new identity service client connection

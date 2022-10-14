@@ -7,8 +7,8 @@ import (
 
 	goHex "encoding/hex"
 
-	"github.com/0xPolygon/polygon-edge/helper/hex"
-	"github.com/0xPolygon/polygon-edge/helper/keccak"
+	"konsta.live/helper/hex"
+	"konsta.live/helper/keccak"
 )
 
 type ReceiptStatus uint64

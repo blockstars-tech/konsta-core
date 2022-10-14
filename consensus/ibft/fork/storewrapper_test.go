@@ -8,15 +8,15 @@ import (
 	"path"
 	"testing"
 
-	"github.com/0xPolygon/polygon-edge/consensus/ibft/signer"
-	testHelper "github.com/0xPolygon/polygon-edge/helper/tests"
-	"github.com/0xPolygon/polygon-edge/state"
-	"github.com/0xPolygon/polygon-edge/types"
-	"github.com/0xPolygon/polygon-edge/validators"
-	"github.com/0xPolygon/polygon-edge/validators/store"
-	"github.com/0xPolygon/polygon-edge/validators/store/snapshot"
 	"github.com/hashicorp/go-hclog"
 	"github.com/stretchr/testify/assert"
+	"konsta.live/consensus/ibft/signer"
+	testHelper "konsta.live/helper/tests"
+	"konsta.live/state"
+	"konsta.live/types"
+	"konsta.live/validators"
+	"konsta.live/validators/store"
+	"konsta.live/validators/store/snapshot"
 )
 
 var (

@@ -1,9 +1,9 @@
 package version
 
 import (
-	"github.com/0xPolygon/polygon-edge/command"
-	"github.com/0xPolygon/polygon-edge/versioning"
 	"github.com/spf13/cobra"
+	"konsta.live/command"
+	"konsta.live/versioning"
 )
 
 func GetCommand() *cobra.Command {

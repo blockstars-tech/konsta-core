@@ -7,15 +7,15 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/0xPolygon/polygon-edge/state"
 	"github.com/hashicorp/go-hclog"
+	"konsta.live/state"
 
-	"github.com/0xPolygon/polygon-edge/chain"
 	"github.com/stretchr/testify/assert"
+	"konsta.live/chain"
 
-	"github.com/0xPolygon/polygon-edge/blockchain/storage"
-	"github.com/0xPolygon/polygon-edge/blockchain/storage/memory"
-	"github.com/0xPolygon/polygon-edge/types"
+	"konsta.live/blockchain/storage"
+	"konsta.live/blockchain/storage/memory"
+	"konsta.live/types"
 )
 
 func TestGenesis(t *testing.T) {

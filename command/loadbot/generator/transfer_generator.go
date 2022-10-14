@@ -5,8 +5,8 @@ import (
 	"math/big"
 	"sync/atomic"
 
-	"github.com/0xPolygon/polygon-edge/crypto"
-	"github.com/0xPolygon/polygon-edge/types"
+	"konsta.live/crypto"
+	"konsta.live/types"
 )
 
 type TransferGenerator struct {

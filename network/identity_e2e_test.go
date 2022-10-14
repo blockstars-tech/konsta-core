@@ -5,8 +5,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/0xPolygon/polygon-edge/chain"
 	"github.com/stretchr/testify/assert"
+	"konsta.live/chain"
 )
 
 func TestIdentityHandshake(t *testing.T) {

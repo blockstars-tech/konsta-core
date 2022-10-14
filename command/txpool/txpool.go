@@ -1,10 +1,10 @@
 package txpool
 
 import (
-	"github.com/0xPolygon/polygon-edge/command/helper"
-	"github.com/0xPolygon/polygon-edge/command/txpool/status"
-	"github.com/0xPolygon/polygon-edge/command/txpool/subscribe"
 	"github.com/spf13/cobra"
+	"konsta.live/command/helper"
+	"konsta.live/command/txpool/status"
+	"konsta.live/command/txpool/subscribe"
 )
 
 func GetCommand() *cobra.Command {

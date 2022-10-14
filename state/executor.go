@@ -8,10 +8,10 @@ import (
 
 	"github.com/hashicorp/go-hclog"
 
-	"github.com/0xPolygon/polygon-edge/chain"
-	"github.com/0xPolygon/polygon-edge/crypto"
-	"github.com/0xPolygon/polygon-edge/state/runtime"
-	"github.com/0xPolygon/polygon-edge/types"
+	"konsta.live/chain"
+	"konsta.live/crypto"
+	"konsta.live/state/runtime"
+	"konsta.live/types"
 )
 
 const (
@@ -334,7 +334,8 @@ func (t *Transition) GetTxnHash() types.Hash {
 func (t *Transition) Apply(msg *types.Transaction) (*runtime.ExecutionResult, error) {
 	s := t.state.Snapshot()
 	result, err := t.apply(msg)
-
+	t.logger.Error("result err", "err", result.Err)
+	t.logger.Error("err itself", "err", err)
 	if err != nil {
 		t.state.RevertToSnapshot(s)
 	}
@@ -476,6 +477,7 @@ func (t *Transition) apply(msg *types.Transaction) (*runtime.ExecutionResult, er
 		result = t.Call2(msg.From, *msg.To, msg.Input, value, gasLeft)
 	}
 
+	t.logger.Error("111111111111111111111111111111111111111111111111", "err", result.Err)
 	refund := txn.GetRefund()
 	result.UpdateGasUsed(msg.Gas, refund)
 
@@ -489,6 +491,8 @@ func (t *Transition) apply(msg *types.Transaction) (*runtime.ExecutionResult, er
 
 	// return gas to the pool
 	t.addGasPool(result.GasLeft)
+
+	t.logger.Error("2222222222222222222222222222222222222222222222222", "err", result.Err)
 
 	return result, nil
 }

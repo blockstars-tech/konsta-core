@@ -3,8 +3,8 @@ package archive
 import (
 	"fmt"
 
-	"github.com/0xPolygon/polygon-edge/types"
 	"github.com/umbracle/fastrlp"
+	"konsta.live/types"
 )
 
 // Metadata is the data stored in the beginning of backup

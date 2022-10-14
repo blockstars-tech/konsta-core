@@ -1,8 +1,8 @@
 package signer
 
 import (
-	"github.com/0xPolygon/polygon-edge/types"
-	"github.com/0xPolygon/polygon-edge/validators"
+	"konsta.live/types"
+	"konsta.live/validators"
 )
 
 // KeyManager is a delegated module that signs data

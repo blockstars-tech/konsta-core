@@ -4,10 +4,10 @@ import (
 	"math/big"
 	"testing"
 
-	"github.com/0xPolygon/polygon-edge/chain"
-	"github.com/0xPolygon/polygon-edge/state/runtime"
-	"github.com/0xPolygon/polygon-edge/types"
 	"github.com/stretchr/testify/assert"
+	"konsta.live/chain"
+	"konsta.live/state/runtime"
+	"konsta.live/types"
 )
 
 func newMockContract(value *big.Int, gas uint64, code []byte) *runtime.Contract {

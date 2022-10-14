@@ -6,16 +6,16 @@ import (
 	"math"
 	"net"
 
-	"github.com/0xPolygon/polygon-edge/command/server/config"
+	"konsta.live/command/server/config"
 
-	"github.com/0xPolygon/polygon-edge/network/common"
+	"konsta.live/network/common"
 
-	"github.com/0xPolygon/polygon-edge/chain"
-	"github.com/0xPolygon/polygon-edge/command/helper"
-	"github.com/0xPolygon/polygon-edge/network"
-	"github.com/0xPolygon/polygon-edge/secrets"
-	"github.com/0xPolygon/polygon-edge/server"
-	"github.com/0xPolygon/polygon-edge/types"
+	"konsta.live/chain"
+	"konsta.live/command/helper"
+	"konsta.live/network"
+	"konsta.live/secrets"
+	"konsta.live/server"
+	"konsta.live/types"
 )
 
 var (

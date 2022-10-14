@@ -4,10 +4,10 @@ import (
 	"context"
 	"errors"
 
-	"github.com/0xPolygon/polygon-edge/network/grpc"
-	"github.com/0xPolygon/polygon-edge/syncer/proto"
-	"github.com/0xPolygon/polygon-edge/types"
 	"github.com/golang/protobuf/ptypes/empty"
+	"konsta.live/network/grpc"
+	"konsta.live/syncer/proto"
+	"konsta.live/types"
 )
 
 var (

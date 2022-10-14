@@ -26,3 +26,9 @@ artifacts
 *.log
 
 vendor/
+
+macBuilds/
+linuxBuilds/
+
+buildTest/us-1/konsta*
+buildTest/us-2/konsta*

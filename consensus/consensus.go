@@ -4,16 +4,16 @@ import (
 	"context"
 	"log"
 
-	"github.com/0xPolygon/polygon-edge/blockchain"
-	"github.com/0xPolygon/polygon-edge/chain"
-	"github.com/0xPolygon/polygon-edge/helper/progress"
-	"github.com/0xPolygon/polygon-edge/network"
-	"github.com/0xPolygon/polygon-edge/secrets"
-	"github.com/0xPolygon/polygon-edge/state"
-	"github.com/0xPolygon/polygon-edge/txpool"
-	"github.com/0xPolygon/polygon-edge/types"
 	"github.com/hashicorp/go-hclog"
 	"google.golang.org/grpc"
+	"konsta.live/blockchain"
+	"konsta.live/chain"
+	"konsta.live/helper/progress"
+	"konsta.live/network"
+	"konsta.live/secrets"
+	"konsta.live/state"
+	"konsta.live/txpool"
+	"konsta.live/types"
 )
 
 // Consensus is the public interface for consensus mechanism

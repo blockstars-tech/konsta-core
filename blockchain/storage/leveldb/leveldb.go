@@ -3,9 +3,9 @@ package leveldb
 import (
 	"fmt"
 
-	"github.com/0xPolygon/polygon-edge/blockchain/storage"
 	"github.com/hashicorp/go-hclog"
 	"github.com/syndtr/goleveldb/leveldb"
+	"konsta.live/blockchain/storage"
 )
 
 // Factory creates a leveldb storage

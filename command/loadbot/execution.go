@@ -11,13 +11,13 @@ import (
 
 	"github.com/umbracle/ethgo"
 
-	"github.com/0xPolygon/polygon-edge/command/loadbot/generator"
-	"github.com/0xPolygon/polygon-edge/helper/tests"
-	txpoolOp "github.com/0xPolygon/polygon-edge/txpool/proto"
 	"github.com/golang/protobuf/ptypes/any"
 	"github.com/umbracle/ethgo/jsonrpc"
+	"konsta.live/command/loadbot/generator"
+	"konsta.live/helper/tests"
+	txpoolOp "konsta.live/txpool/proto"
 
-	"github.com/0xPolygon/polygon-edge/types"
+	"konsta.live/types"
 )
 
 const (

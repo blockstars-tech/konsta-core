@@ -3,14 +3,14 @@ package fork
 import (
 	"errors"
 
-	"github.com/0xPolygon/polygon-edge/consensus/ibft/hook"
-	"github.com/0xPolygon/polygon-edge/contracts/staking"
-	"github.com/0xPolygon/polygon-edge/helper/hex"
-	stakingHelper "github.com/0xPolygon/polygon-edge/helper/staking"
-	"github.com/0xPolygon/polygon-edge/state"
-	"github.com/0xPolygon/polygon-edge/types"
-	"github.com/0xPolygon/polygon-edge/validators"
-	"github.com/0xPolygon/polygon-edge/validators/store"
+	"konsta.live/consensus/ibft/hook"
+	"konsta.live/contracts/staking"
+	"konsta.live/helper/hex"
+	stakingHelper "konsta.live/helper/staking"
+	"konsta.live/state"
+	"konsta.live/types"
+	"konsta.live/validators"
+	"konsta.live/validators/store"
 )
 
 var (

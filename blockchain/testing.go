@@ -6,14 +6,14 @@ import (
 	"math/big"
 	"testing"
 
-	"github.com/0xPolygon/polygon-edge/blockchain/storage"
+	"konsta.live/blockchain/storage"
 
-	"github.com/0xPolygon/polygon-edge/chain"
-	"github.com/0xPolygon/polygon-edge/state"
-	itrie "github.com/0xPolygon/polygon-edge/state/immutable-trie"
 	"github.com/hashicorp/go-hclog"
+	"konsta.live/chain"
+	"konsta.live/state"
+	itrie "konsta.live/state/immutable-trie"
 
-	"github.com/0xPolygon/polygon-edge/types"
+	"konsta.live/types"
 )
 
 var (

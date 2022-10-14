@@ -3,8 +3,8 @@ package jsonrpc
 import (
 	"testing"
 
-	"github.com/0xPolygon/polygon-edge/types"
 	"github.com/stretchr/testify/assert"
+	"konsta.live/types"
 )
 
 func TestBlockNumberOrHash_UnmarshalJSON(t *testing.T) {

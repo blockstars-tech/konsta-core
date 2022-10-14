@@ -5,11 +5,11 @@ import (
 	"fmt"
 	"testing"
 
-	testHelper "github.com/0xPolygon/polygon-edge/helper/tests"
-	"github.com/0xPolygon/polygon-edge/state"
-	"github.com/0xPolygon/polygon-edge/types"
-	"github.com/0xPolygon/polygon-edge/validators"
 	"github.com/stretchr/testify/assert"
+	testHelper "konsta.live/helper/tests"
+	"konsta.live/state"
+	"konsta.live/types"
+	"konsta.live/validators"
 )
 
 func TestFetchValidators(t *testing.T) {

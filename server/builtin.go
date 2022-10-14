@@ -1,15 +1,15 @@
 package server
 
 import (
-	"github.com/0xPolygon/polygon-edge/consensus"
-	consensusDev "github.com/0xPolygon/polygon-edge/consensus/dev"
-	consensusDummy "github.com/0xPolygon/polygon-edge/consensus/dummy"
-	consensusIBFT "github.com/0xPolygon/polygon-edge/consensus/ibft"
-	"github.com/0xPolygon/polygon-edge/secrets"
-	"github.com/0xPolygon/polygon-edge/secrets/awsssm"
-	"github.com/0xPolygon/polygon-edge/secrets/gcpssm"
-	"github.com/0xPolygon/polygon-edge/secrets/hashicorpvault"
-	"github.com/0xPolygon/polygon-edge/secrets/local"
+	"konsta.live/consensus"
+	consensusDev "konsta.live/consensus/dev"
+	consensusDummy "konsta.live/consensus/dummy"
+	consensusIBFT "konsta.live/consensus/ibft"
+	"konsta.live/secrets"
+	"konsta.live/secrets/awsssm"
+	"konsta.live/secrets/gcpssm"
+	"konsta.live/secrets/hashicorpvault"
+	"konsta.live/secrets/local"
 )
 
 type ConsensusType string

@@ -3,9 +3,9 @@ package signer
 import (
 	"errors"
 
-	"github.com/0xPolygon/polygon-edge/crypto"
-	"github.com/0xPolygon/polygon-edge/types"
-	"github.com/0xPolygon/polygon-edge/validators"
+	"konsta.live/crypto"
+	"konsta.live/types"
+	"konsta.live/validators"
 )
 
 var (

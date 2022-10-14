@@ -3,8 +3,8 @@ package snapshot
 import (
 	"context"
 
-	"github.com/0xPolygon/polygon-edge/command/helper"
-	ibftOp "github.com/0xPolygon/polygon-edge/consensus/ibft/proto"
+	"konsta.live/command/helper"
+	ibftOp "konsta.live/consensus/ibft/proto"
 )
 
 const (

@@ -4,12 +4,12 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/0xPolygon/polygon-edge/state"
-	"github.com/0xPolygon/polygon-edge/types"
-	"github.com/0xPolygon/polygon-edge/validators"
-	"github.com/0xPolygon/polygon-edge/validators/store"
 	"github.com/hashicorp/go-hclog"
 	lru "github.com/hashicorp/golang-lru"
+	"konsta.live/state"
+	"konsta.live/types"
+	"konsta.live/validators"
+	"konsta.live/validators/store"
 )
 
 const (

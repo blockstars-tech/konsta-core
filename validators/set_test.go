@@ -3,8 +3,8 @@ package validators
 import (
 	"testing"
 
-	"github.com/0xPolygon/polygon-edge/types"
 	"github.com/stretchr/testify/assert"
+	"konsta.live/types"
 )
 
 func TestSetType(t *testing.T) {

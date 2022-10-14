@@ -8,10 +8,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/0xPolygon/polygon-edge/network/common"
-	peerEvent "github.com/0xPolygon/polygon-edge/network/event"
+	"konsta.live/network/common"
+	peerEvent "konsta.live/network/event"
 
-	"github.com/0xPolygon/polygon-edge/helper/tests"
+	"konsta.live/helper/tests"
 
 	"github.com/libp2p/go-libp2p/core/crypto"
 	"github.com/libp2p/go-libp2p/core/network"

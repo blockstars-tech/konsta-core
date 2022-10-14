@@ -1,8 +1,8 @@
 package storage
 
 import (
-	"github.com/0xPolygon/polygon-edge/types"
 	"github.com/umbracle/fastrlp"
+	"konsta.live/types"
 )
 
 type Forks []types.Hash

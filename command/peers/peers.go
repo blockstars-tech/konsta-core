@@ -1,11 +1,11 @@
 package peers
 
 import (
-	"github.com/0xPolygon/polygon-edge/command/helper"
-	"github.com/0xPolygon/polygon-edge/command/peers/add"
-	"github.com/0xPolygon/polygon-edge/command/peers/list"
-	"github.com/0xPolygon/polygon-edge/command/peers/status"
 	"github.com/spf13/cobra"
+	"konsta.live/command/helper"
+	"konsta.live/command/peers/add"
+	"konsta.live/command/peers/list"
+	"konsta.live/command/peers/status"
 )
 
 func GetCommand() *cobra.Command {

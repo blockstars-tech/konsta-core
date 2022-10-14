@@ -1,13 +1,13 @@
 package dummy
 
 import (
-	"github.com/0xPolygon/polygon-edge/blockchain"
-	"github.com/0xPolygon/polygon-edge/consensus"
-	"github.com/0xPolygon/polygon-edge/helper/progress"
-	"github.com/0xPolygon/polygon-edge/state"
-	"github.com/0xPolygon/polygon-edge/txpool"
-	"github.com/0xPolygon/polygon-edge/types"
 	"github.com/hashicorp/go-hclog"
+	"konsta.live/blockchain"
+	"konsta.live/consensus"
+	"konsta.live/helper/progress"
+	"konsta.live/state"
+	"konsta.live/txpool"
+	"konsta.live/types"
 )
 
 type Dummy struct {

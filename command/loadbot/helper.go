@@ -8,8 +8,8 @@ import (
 
 	"github.com/umbracle/ethgo"
 
-	"github.com/0xPolygon/polygon-edge/types"
 	"github.com/umbracle/ethgo/jsonrpc"
+	"konsta.live/types"
 )
 
 // getInitialSenderNonce queries the sender account nonce before starting the loadbot run.

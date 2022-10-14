@@ -5,9 +5,9 @@ import (
 	"math/big"
 	"testing"
 
-	"github.com/0xPolygon/polygon-edge/types"
-	"github.com/0xPolygon/polygon-edge/validators"
 	"github.com/stretchr/testify/assert"
+	"konsta.live/types"
+	"konsta.live/validators"
 )
 
 func JSONMarshalHelper(t *testing.T, extra *IstanbulExtra) string {

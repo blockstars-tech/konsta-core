@@ -7,12 +7,12 @@ import (
 	"testing"
 	"time"
 
-	"github.com/0xPolygon/polygon-edge/consensus/ibft/fork"
-	ibftOp "github.com/0xPolygon/polygon-edge/consensus/ibft/proto"
-	"github.com/0xPolygon/polygon-edge/crypto"
-	"github.com/0xPolygon/polygon-edge/e2e/framework"
-	"github.com/0xPolygon/polygon-edge/types"
 	"github.com/stretchr/testify/assert"
+	"konsta.live/consensus/ibft/fork"
+	ibftOp "konsta.live/consensus/ibft/proto"
+	"konsta.live/crypto"
+	"konsta.live/e2e/framework"
+	"konsta.live/types"
 )
 
 // Test scenario:

@@ -9,18 +9,18 @@ import (
 	"testing"
 	"time"
 
-	ibftOp "github.com/0xPolygon/polygon-edge/consensus/ibft/proto"
-	"github.com/0xPolygon/polygon-edge/contracts/staking"
-	"github.com/0xPolygon/polygon-edge/crypto"
-	"github.com/0xPolygon/polygon-edge/e2e/framework"
-	stakingHelper "github.com/0xPolygon/polygon-edge/helper/staking"
-	"github.com/0xPolygon/polygon-edge/helper/tests"
-	txpoolOp "github.com/0xPolygon/polygon-edge/txpool/proto"
-	"github.com/0xPolygon/polygon-edge/types"
 	"github.com/golang/protobuf/ptypes/any"
 	"github.com/stretchr/testify/assert"
 	"github.com/umbracle/ethgo"
 	"github.com/umbracle/ethgo/jsonrpc"
+	ibftOp "konsta.live/consensus/ibft/proto"
+	"konsta.live/contracts/staking"
+	"konsta.live/crypto"
+	"konsta.live/e2e/framework"
+	stakingHelper "konsta.live/helper/staking"
+	"konsta.live/helper/tests"
+	txpoolOp "konsta.live/txpool/proto"
+	"konsta.live/types"
 )
 
 // foundInValidatorSet is a helper function for searching through the passed in set for a specific

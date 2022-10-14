@@ -3,12 +3,12 @@ package genesis
 import (
 	"fmt"
 
-	"github.com/0xPolygon/polygon-edge/command"
-	"github.com/0xPolygon/polygon-edge/command/helper"
-	"github.com/0xPolygon/polygon-edge/consensus/ibft"
-	"github.com/0xPolygon/polygon-edge/helper/common"
-	"github.com/0xPolygon/polygon-edge/validators"
 	"github.com/spf13/cobra"
+	"konsta.live/command"
+	"konsta.live/command/helper"
+	"konsta.live/consensus/ibft"
+	"konsta.live/helper/common"
+	"konsta.live/validators"
 )
 
 func GetCommand() *cobra.Command {

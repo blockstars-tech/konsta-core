@@ -1,8 +1,8 @@
 package validators
 
 import (
-	"github.com/0xPolygon/polygon-edge/types"
 	"github.com/umbracle/fastrlp"
+	"konsta.live/types"
 )
 
 // BLSValidator is a validator using ECDSA signing algorithm

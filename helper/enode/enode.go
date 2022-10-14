@@ -9,8 +9,8 @@ import (
 	"net/url"
 	"strconv"
 
-	"github.com/0xPolygon/polygon-edge/crypto"
-	"github.com/0xPolygon/polygon-edge/helper/hex"
+	"konsta.live/crypto"
+	"konsta.live/helper/hex"
 )
 
 const nodeIDBytes = 512 / 8

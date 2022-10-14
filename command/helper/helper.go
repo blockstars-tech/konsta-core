@@ -9,17 +9,17 @@ import (
 	"os"
 	"time"
 
-	"github.com/0xPolygon/polygon-edge/chain"
-	"github.com/0xPolygon/polygon-edge/command"
-	ibftOp "github.com/0xPolygon/polygon-edge/consensus/ibft/proto"
-	"github.com/0xPolygon/polygon-edge/helper/common"
-	"github.com/0xPolygon/polygon-edge/server"
-	"github.com/0xPolygon/polygon-edge/server/proto"
-	txpoolOp "github.com/0xPolygon/polygon-edge/txpool/proto"
 	"github.com/ryanuber/columnize"
 	"github.com/spf13/cobra"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
+	"konsta.live/chain"
+	"konsta.live/command"
+	ibftOp "konsta.live/consensus/ibft/proto"
+	"konsta.live/helper/common"
+	"konsta.live/server"
+	"konsta.live/server/proto"
+	txpoolOp "konsta.live/txpool/proto"
 )
 
 type ClientCloseResult struct {

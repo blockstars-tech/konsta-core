@@ -1,12 +1,12 @@
 package init
 
 import (
-	"github.com/0xPolygon/polygon-edge/crypto"
-	"github.com/0xPolygon/polygon-edge/helper/hex"
-	"github.com/0xPolygon/polygon-edge/network"
-	"github.com/0xPolygon/polygon-edge/secrets"
-	"github.com/0xPolygon/polygon-edge/types"
 	"github.com/libp2p/go-libp2p/core/peer"
+	"konsta.live/crypto"
+	"konsta.live/helper/hex"
+	"konsta.live/network"
+	"konsta.live/secrets"
+	"konsta.live/types"
 )
 
 // loadValidatorAddress loads ECDSA key by SecretsManager and returns validator address

@@ -3,12 +3,12 @@ package server
 import (
 	"fmt"
 
-	"github.com/0xPolygon/polygon-edge/command"
-	"github.com/0xPolygon/polygon-edge/command/helper"
-	"github.com/0xPolygon/polygon-edge/command/server/config"
-	"github.com/0xPolygon/polygon-edge/command/server/export"
-	"github.com/0xPolygon/polygon-edge/server"
 	"github.com/spf13/cobra"
+	"konsta.live/command"
+	"konsta.live/command/helper"
+	"konsta.live/command/server/config"
+	"konsta.live/command/server/export"
+	"konsta.live/server"
 )
 
 func GetCommand() *cobra.Command {

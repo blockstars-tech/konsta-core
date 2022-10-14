@@ -1,9 +1,9 @@
 package signer
 
 import (
-	"github.com/0xPolygon/polygon-edge/secrets"
-	"github.com/0xPolygon/polygon-edge/types"
-	"github.com/0xPolygon/polygon-edge/validators"
+	"konsta.live/secrets"
+	"konsta.live/types"
+	"konsta.live/validators"
 )
 
 type MockSecretManager struct {

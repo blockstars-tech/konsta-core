@@ -5,12 +5,12 @@ import (
 	"os"
 	"strings"
 
-	"github.com/0xPolygon/polygon-edge/crypto"
-	txpoolOp "github.com/0xPolygon/polygon-edge/txpool/proto"
-	"github.com/0xPolygon/polygon-edge/types"
 	"github.com/umbracle/ethgo/jsonrpc"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
+	"konsta.live/crypto"
+	txpoolOp "konsta.live/txpool/proto"
+	"konsta.live/types"
 )
 
 func createJSONRPCClient(endpoint string, maxConns int) (*jsonrpc.Client, error) {

@@ -6,10 +6,10 @@ import (
 	"time"
 
 	"github.com/0xPolygon/go-ibft/messages"
-	"github.com/0xPolygon/polygon-edge/consensus"
-	"github.com/0xPolygon/polygon-edge/consensus/ibft/signer"
-	"github.com/0xPolygon/polygon-edge/state"
-	"github.com/0xPolygon/polygon-edge/types"
+	"konsta.live/consensus"
+	"konsta.live/consensus/ibft/signer"
+	"konsta.live/state"
+	"konsta.live/types"
 )
 
 func (i *backendIBFT) BuildProposal(blockNumber uint64) []byte {
@@ -251,7 +251,9 @@ func (i *backendIBFT) writeTransactions(
 	i.txpool.Prepare()
 
 write:
+	
 	for {
+		i.logger.Error("write loop hit")
 		select {
 		case <-blockTimer.C:
 			return
@@ -292,6 +294,10 @@ func (i *backendIBFT) writeTransaction(
 	transition transitionInterface,
 	gasLimit uint64,
 ) (*txExeResult, bool) {
+	
+
+	
+
 	if tx == nil {
 		return nil, false
 	}
@@ -311,6 +317,7 @@ func (i *backendIBFT) writeTransaction(
 		// continue processing
 		return &txExeResult{tx, fail}, true
 	}
+	i.logger.Error("333333333333333333333333333333333333333333333333333333333333")
 
 	if err := transition.Write(tx); err != nil {
 		if _, ok := err.(*state.GasLimitReachedTransitionApplicationError); ok { //nolint:errorlint

@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"os"
 
-	"github.com/0xPolygon/polygon-edge/validators/store/snapshot"
+	"konsta.live/validators/store/snapshot"
 )
 
 // loadSnapshotMetadata loads Metadata from file

@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/0xPolygon/polygon-edge/types"
-	"github.com/0xPolygon/polygon-edge/validators"
 	"github.com/stretchr/testify/assert"
+	"konsta.live/types"
+	"konsta.live/validators"
 )
 
 var (

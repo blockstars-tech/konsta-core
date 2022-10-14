@@ -5,18 +5,18 @@ import (
 	"path"
 	"testing"
 
-	"github.com/0xPolygon/polygon-edge/consensus/ibft/hook"
-	"github.com/0xPolygon/polygon-edge/consensus/ibft/signer"
-	"github.com/0xPolygon/polygon-edge/crypto"
-	"github.com/0xPolygon/polygon-edge/helper/common"
-	testHelper "github.com/0xPolygon/polygon-edge/helper/tests"
-	"github.com/0xPolygon/polygon-edge/secrets"
-	"github.com/0xPolygon/polygon-edge/types"
-	"github.com/0xPolygon/polygon-edge/validators"
-	"github.com/0xPolygon/polygon-edge/validators/store"
-	"github.com/0xPolygon/polygon-edge/validators/store/snapshot"
 	"github.com/hashicorp/go-hclog"
 	"github.com/stretchr/testify/assert"
+	"konsta.live/consensus/ibft/hook"
+	"konsta.live/consensus/ibft/signer"
+	"konsta.live/crypto"
+	"konsta.live/helper/common"
+	testHelper "konsta.live/helper/tests"
+	"konsta.live/secrets"
+	"konsta.live/types"
+	"konsta.live/validators"
+	"konsta.live/validators/store"
+	"konsta.live/validators/store/snapshot"
 )
 
 type mockValidatorStore struct {
