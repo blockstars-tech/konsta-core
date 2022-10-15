@@ -467,13 +467,17 @@ func (e *Eth) Call(arg *txnArgs, filter BlockNumberOrHash) (interface{}, error) 
 
 	// The return value of the execution is saved in the transition (returnValue field)
 	result, err := e.store.ApplyTxn(header, transaction)
+	e.logger.Error("Call result 470 ERR","err",result.Err)
+	e.logger.Error("Call result 471 err","err",err)
+
 	if err != nil {
 		return nil, err
 	}
 
 	// Check if an EVM revert happened
 	if result.Reverted() {
-		return nil, constructErrorFromRevert(result)
+		// return nil, constructErrorFromRevert(result) //@madi
+		return nil,  fmt.Errorf("konsta reverted this TX but it will live in Temporary mode until A notr Pick it up")
 	}
 
 	if result.Failed() {
@@ -604,7 +608,7 @@ func (e *Eth) EstimateGas(arg *txnArgs, rawNum *BlockNumber) (interface{}, error
 		txn.Gas = gas
 
 		result, applyErr := e.store.ApplyTxn(header, txn)
-
+		e.logger.Error("Estimate gas 608 result ERR","err",result.Err)
 		if applyErr != nil {
 			// Check the application error.
 			// Gas apply errors are valid, and should be ignored
@@ -630,7 +634,9 @@ func (e *Eth) EstimateGas(arg *txnArgs, rawNum *BlockNumber) (interface{}, error
 			if isEVMRevertError(result.Err) {
 				// The EVM reverted during execution, attempt to extract the
 				// error message and return it
-				return true, constructErrorFromRevert(result)
+				// return true, constructErrorFromRevert(result) //@madi
+				return true, fmt.Errorf("konsta reverted this TX but it will live in Temporary mode until A notr Pick it up")
+
 			}
 
 			return true, result.Err

@@ -4,6 +4,7 @@ import (
 	"context"
 	"errors"
 	"fmt"
+	// "log"
 	"math/big"
 	"net"
 	"net/http"
@@ -520,9 +521,10 @@ func (j *jsonRPCHub) ApplyTxn(
 	if err != nil {
 		return
 	}
-
+	
 	result, err = transition.Apply(txn)
-
+	fmt.Sprintf("ApplyTx server 526, %s",result.Err)
+	fmt.Sprintf("ApplyTx server 526, %s",err)
 	return
 }
 

@@ -250,6 +250,13 @@ func (t *Transition) Write(txn *types.Transaction) error {
 	msg := txn.Copy()
 
 	result, e := t.Apply(msg)
+	t.logger.Error("executer 253 big Apply result.Err","err", result.Err)
+	t.logger.Error("executer 254 big Apply result.Err","err", err)
+
+	if result.Err != nil {
+		t.logger.Error("executer 253 big Apply result.Err","err", result.Err)
+		
+	}
 	if e != nil {
 		t.logger.Error("failed to apply tx", "err", e)
 
@@ -334,8 +341,8 @@ func (t *Transition) GetTxnHash() types.Hash {
 func (t *Transition) Apply(msg *types.Transaction) (*runtime.ExecutionResult, error) {
 	s := t.state.Snapshot()
 	result, err := t.apply(msg)
-	t.logger.Error("result err", "err", result.Err)
-	t.logger.Error("err itself", "err", err)
+	t.logger.Error("executer result err 341", "err", result.Err)
+	t.logger.Error("executer err itself 342", "err", err)
 	if err != nil {
 		t.state.RevertToSnapshot(s)
 	}
@@ -343,7 +350,8 @@ func (t *Transition) Apply(msg *types.Transaction) (*runtime.ExecutionResult, er
 	if t.r.PostHook != nil {
 		t.r.PostHook(t)
 	}
-
+	t.logger.Error("executer result err 352", "err", result.Err)
+	t.logger.Error("executer err itself 353", "err", err)
 	return result, err
 }
 
@@ -477,7 +485,7 @@ func (t *Transition) apply(msg *types.Transaction) (*runtime.ExecutionResult, er
 		result = t.Call2(msg.From, *msg.To, msg.Input, value, gasLeft)
 	}
 
-	t.logger.Error("111111111111111111111111111111111111111111111111", "err", result.Err)
+	t.logger.Error("little apply line 480 result.Err", "err", result.Err)
 	refund := txn.GetRefund()
 	result.UpdateGasUsed(msg.Gas, refund)
 
@@ -492,7 +500,7 @@ func (t *Transition) apply(msg *types.Transaction) (*runtime.ExecutionResult, er
 	// return gas to the pool
 	t.addGasPool(result.GasLeft)
 
-	t.logger.Error("2222222222222222222222222222222222222222222222222", "err", result.Err)
+	t.logger.Error("little apply line 495 result.ERR", "err", result.Err)
 
 	return result, nil
 }

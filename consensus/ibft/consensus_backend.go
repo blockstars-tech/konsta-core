@@ -2,6 +2,7 @@ package ibft
 
 import (
 	"fmt"
+	// "log"
 	"math"
 	"time"
 
@@ -317,9 +318,10 @@ func (i *backendIBFT) writeTransaction(
 		// continue processing
 		return &txExeResult{tx, fail}, true
 	}
-	i.logger.Error("333333333333333333333333333333333333333333333333333333333333")
+	
 
 	if err := transition.Write(tx); err != nil {
+		i.logger.Error("transition write error","err", err)
 		if _, ok := err.(*state.GasLimitReachedTransitionApplicationError); ok { //nolint:errorlint
 			// stop processing
 			return nil, false
