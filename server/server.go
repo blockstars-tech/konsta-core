@@ -91,7 +91,7 @@ func newFileLogger(config *Config) (hclog.Logger, error) {
 	}
 
 	return hclog.New(&hclog.LoggerOptions{
-		Name:   "polygon",
+		Name:   "konsta",
 		Level:  config.LogLevel,
 		Output: logFileWriter,
 	}), nil
@@ -100,7 +100,7 @@ func newFileLogger(config *Config) (hclog.Logger, error) {
 // newCLILogger returns minimal logger instance that sends all logs to standard output
 func newCLILogger(config *Config) hclog.Logger {
 	return hclog.New(&hclog.LoggerOptions{
-		Name:  "polygon",
+		Name:  "konsta",
 		Level: config.LogLevel,
 	})
 }
@@ -144,10 +144,10 @@ func NewServer(config *Config) (*Server, error) {
 	}
 
 	if config.Telemetry.PrometheusAddr != nil {
-		m.serverMetrics = metricProvider("polygon", config.Chain.Name, true)
+		m.serverMetrics = metricProvider("konsta", config.Chain.Name, true)
 		m.prometheusServer = m.startPrometheusServer(config.Telemetry.PrometheusAddr)
 	} else {
-		m.serverMetrics = metricProvider("polygon", config.Chain.Name, false)
+		m.serverMetrics = metricProvider("konsta", config.Chain.Name, false)
 	}
 
 	// Set up the secrets manager

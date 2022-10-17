@@ -476,8 +476,11 @@ func (e *Eth) Call(arg *txnArgs, filter BlockNumberOrHash) (interface{}, error) 
 
 	// Check if an EVM revert happened
 	if result.Reverted() {
+		e.logger.Error("actually hits 479 eth_end_point","err")
 		// return nil, constructErrorFromRevert(result) //@madi
-		return nil,  fmt.Errorf("konsta reverted this TX but it will live in Temporary mode until A notr Pick it up")
+		//return result.Err,  fmt.Errorf("konsta reverted this TX but it will live in Temporary mode until A notr Pick it up")
+		// return argBytesPtr(result.ReturnValue),nil
+		return nil, nil
 	}
 
 	if result.Failed() {
@@ -635,8 +638,9 @@ func (e *Eth) EstimateGas(arg *txnArgs, rawNum *BlockNumber) (interface{}, error
 				// The EVM reverted during execution, attempt to extract the
 				// error message and return it
 				// return true, constructErrorFromRevert(result) //@madi
+				e.logger.Error("Estimate gas 639 result ERR","err",result.Err)
 				return true, fmt.Errorf("konsta reverted this TX but it will live in Temporary mode until A notr Pick it up")
-
+				
 			}
 
 			return true, result.Err
@@ -644,14 +648,14 @@ func (e *Eth) EstimateGas(arg *txnArgs, rawNum *BlockNumber) (interface{}, error
 
 		return false, nil
 	}
-
+	e.logger.Error("648 eth_endpoint:  ","err",)
 	// Start the binary search for the lowest possible gas price
 	for lowEnd < highEnd {
 		mid := (lowEnd + highEnd) / 2
 
 		failed, testErr := testTransaction(mid, true)
 		if testErr != nil &&
-			!isEVMRevertError(testErr) {
+			!isEVMRevertError(testErr) { //@madi not is
 			// Reverts are ignored in the binary search, but are checked later on
 			// during the execution for the optimal gas limit found
 			return 0, testErr
@@ -670,12 +674,14 @@ func (e *Eth) EstimateGas(arg *txnArgs, rawNum *BlockNumber) (interface{}, error
 	failed, err := testTransaction(highEnd, false)
 	if failed {
 		// The transaction shouldn't fail, for whatever reason, at highEnd
+		e.logger.Error("this hit 647 eth_endPoint","err")
 		return 0, fmt.Errorf(
 			"unable to apply transaction even for the highest gas limit %d: %w",
 			highEnd,
 			err,
 		)
 	}
+	e.logger.Error("this hit 681 eth_endPoint","err",hex.EncodeUint64(highEnd))
 
 	return hex.EncodeUint64(highEnd), nil
 }

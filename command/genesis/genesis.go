@@ -34,7 +34,7 @@ func setFlags(cmd *cobra.Command) {
 		&params.genesisPath,
 		dirFlag,
 		fmt.Sprintf("./%s", command.DefaultGenesisFileName),
-		"the directory for the Polygon Edge genesis data",
+		"the directory for the Konsta Edge genesis data",
 	)
 
 	cmd.Flags().Uint64Var(

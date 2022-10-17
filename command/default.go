@@ -4,7 +4,7 @@ import "konsta.live/server"
 
 const (
 	DefaultGenesisFileName = "genesis.json"
-	DefaultChainName       = "polygon-edge"
+	DefaultChainName       = "konsta-edge"
 	DefaultChainID         = 100
 	DefaultPremineBalance  = "0xD3C21BCECCEDA1000000" // 1 million units of native network currency
 	DefaultConsensus       = server.IBFTConsensus

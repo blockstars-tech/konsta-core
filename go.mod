@@ -5,7 +5,6 @@ go 1.18
 require (
 	cloud.google.com/go/secretmanager v1.7.0
 	github.com/0xPolygon/go-ibft v0.0.0-20221014060854-20516d037167
-	github.com/0xPolygon/polygon-edge v0.6.0
 	github.com/aws/aws-sdk-go v1.44.115
 	github.com/btcsuite/btcd v0.22.1
 	github.com/coinbase/kryptology v1.8.0
@@ -167,7 +166,7 @@ require (
 	golang.org/x/net v0.0.0-20220920183852-bf014ff85ad5 // indirect
 	golang.org/x/oauth2 v0.0.0-20220909003341-f21342109be1 // indirect
 	golang.org/x/sync v0.0.0-20220722155255-886fb9371eb4 // indirect
-	golang.org/x/sys v0.0.0-20220811171246-fbc7d0a398ab // indirect
+	golang.org/x/sys v0.0.0-20221013171732-95e765b1cc43 // indirect
 	golang.org/x/text v0.3.7 // indirect
 	golang.org/x/time v0.0.0-20220411224347-583f2d630306 // indirect
 	golang.org/x/tools v0.1.12 // indirect
