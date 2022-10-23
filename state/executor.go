@@ -102,9 +102,9 @@ func (e *Executor) ProcessBlock(
 
 	for _, t := range block.Transactions {
 		if t.ExceedsBlockGasLimit(block.Header.GasLimit) {
-			if err := txn.WriteFailedReceipt(t); err != nil {
-				return nil, err
-			}
+			// if err := txn.WriteFailedReceipt(t); err != nil {
+			// 	return nil, err
+			// }
 
 			continue
 		}
@@ -250,11 +250,12 @@ func (t *Transition) Write(txn *types.Transaction) error {
 	msg := txn.Copy()
 
 	result, e := t.Apply(msg)
-	t.logger.Error("executer 253 big Apply result.Err","err", result.Err)
-	t.logger.Error("executer 254 big Apply result.Err","err", err)
 
-	if result.Err != nil {
-		t.logger.Error("executer 253 big Apply result.Err","err", result.Err)
+	t.logger.Error("ACtually returned from executer the error","err",result.Err)
+	t.logger.Error("ACtually returned from executer the e","err",e)
+	if result.Reverted() {
+		t.logger.Error("ACtR     EVER    TEDr","err",result.Err)
+		return NewTransitionApplicationError(nil, true)
 		
 	}
 	if e != nil {
@@ -341,8 +342,8 @@ func (t *Transition) GetTxnHash() types.Hash {
 func (t *Transition) Apply(msg *types.Transaction) (*runtime.ExecutionResult, error) {
 	s := t.state.Snapshot()
 	result, err := t.apply(msg)
-	t.logger.Error("executer result err 341", "err", result.Err)
-	t.logger.Error("executer err itself 342", "err", err)
+	t.logger.Error("executer result err 344", "err", result.Err)
+	t.logger.Error("executer err itself 345", "err", err)
 	if err != nil {
 		t.state.RevertToSnapshot(s)
 	}

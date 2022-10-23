@@ -27,7 +27,7 @@ const (
 
 	// maximum allowed number of times an account
 	// was excluded from block building (ibft.writeTransactions)
-	maxAccountDemotions uint64 = 10
+	maxAccountDemotions uint64 = 100000000000 //@madi 10
 
 	// maximum allowed number of consecutive blocks that don't have the account's transaction
 	maxAccountSkips = uint64(10)
@@ -459,7 +459,7 @@ func (p *TxPool) Drop(tx *types.Transaction) {
 	clearAccountQueue(dropped)
 
 	p.eventManager.signalEvent(proto.EventType_DROPPED, tx.Hash)
-	p.logger.Debug("dropped account txs",
+	p.logger.Error("dropped account txs",
 		"num", droppedCount,
 		"next_nonce", nextNonce,
 		"address", tx.From.String(),
@@ -472,7 +472,7 @@ func (p *TxPool) Drop(tx *types.Transaction) {
 func (p *TxPool) Demote(tx *types.Transaction) {
 	account := p.accounts.get(tx.From)
 	if account.Demotions() >= maxAccountDemotions {
-		p.logger.Debug(
+		p.logger.Error(
 			"Demote: threshold reached - dropping account",
 			"addr", tx.From.String(),
 		)
@@ -706,7 +706,7 @@ func (p *TxPool) pruneAccountsWithNonceHoles() {
 // successful, an account is created for this address
 // (only once) and an enqueueRequest is signaled.
 func (p *TxPool) addTx(origin txOrigin, tx *types.Transaction) error {
-	p.logger.Debug("add tx",
+	p.logger.Error("add tx",
 		"origin", origin.String(),
 		"hash", tx.Hash.String(),
 	)
@@ -768,7 +768,7 @@ func (p *TxPool) handleEnqueueRequest(req enqueueRequest) {
 		return
 	}
 
-	p.logger.Debug("enqueue request", "hash", tx.Hash.String())
+	p.logger.Error("enqueue request", "hash", tx.Hash.String())
 
 	p.gauge.increase(slotsRequired(tx))
 
@@ -792,7 +792,7 @@ func (p *TxPool) handlePromoteRequest(req promoteRequest) {
 
 	// promote enqueued txs
 	promoted, pruned := account.promote()
-	p.logger.Debug("promote request", "promoted", promoted, "addr", addr.String())
+	p.logger.Error("promote request", "promoted", promoted, "addr", addr.String())
 
 	p.index.remove(pruned...)
 	p.gauge.decrease(slotsRequired(pruned...))
@@ -835,7 +835,7 @@ func (p *TxPool) addGossipTx(obj interface{}, _ peer.ID) {
 	// add tx
 	if err := p.addTx(gossip, tx); err != nil {
 		if errors.Is(err, ErrAlreadyKnown) {
-			p.logger.Debug("rejecting known tx (gossip)", "hash", tx.Hash.String())
+			p.logger.Error("rejecting known tx (gossip)", "hash", tx.Hash.String())
 
 			return
 		}

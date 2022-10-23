@@ -1,7 +1,7 @@
 package ibft
 
 import (
-	"fmt"
+	// "fmt"
 	// "log"
 	"math"
 	"time"
@@ -306,14 +306,14 @@ func (i *backendIBFT) writeTransaction(
 	if tx.ExceedsBlockGasLimit(gasLimit) {
 		i.txpool.Drop(tx)
 
-		if err := transition.WriteFailedReceipt(tx); err != nil {
-			i.logger.Error(
-				fmt.Sprintf(
-					"unable to write failed receipt for transaction %s",
-					tx.Hash,
-				),
-			)
-		}
+		// if err := transition.WriteFailedReceipt(tx); err != nil {
+		// 	i.logger.Error(
+		// 		fmt.Sprintf(
+		// 			"unable to write failed receipt for transaction %s",
+		// 			tx.Hash,
+		// 		),
+		// 	)
+		// }
 
 		// continue processing
 		return &txExeResult{tx, fail}, true
@@ -321,7 +321,7 @@ func (i *backendIBFT) writeTransaction(
 	
 
 	if err := transition.Write(tx); err != nil {
-		i.logger.Error("transition write error","err", err)
+		i.logger.Error("transition write error 324","err", err)
 		if _, ok := err.(*state.GasLimitReachedTransitionApplicationError); ok { //nolint:errorlint
 			// stop processing
 			return nil, false
@@ -330,8 +330,8 @@ func (i *backendIBFT) writeTransaction(
 
 			return &txExeResult{tx, skip}, true
 		} else {
-			i.txpool.Drop(tx)
-
+			i.txpool.Drop(tx) 
+	
 			return &txExeResult{tx, fail}, true
 		}
 	}

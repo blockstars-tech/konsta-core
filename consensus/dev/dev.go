@@ -132,19 +132,19 @@ func (d *Dev) writeTransactions(gasLimit uint64, transition transitionInterface)
 			} else if appErr, ok := err.(*state.TransitionApplicationError); ok && appErr.IsRecoverable { //nolint:errorlint
 				d.txpool.Demote(tx)
 			} else {
-				d.txpool.Drop(tx)
+				d.txpool.Demote(tx) //@madi Drop()
 			}
 
 			continue
 		}
 
 		// no errors, pop the tx from the pool
-		d.txpool.Pop(tx)
+		// d.txpool.Pop(tx)
 
 		successful = append(successful, tx)
 	}
 
-	d.logger.Info("picked out txns from pool", "num", len(successful), "remaining", d.txpool.Length())
+	d.logger.Error("picked out txns from pool", "num", len(successful), "remaining", d.txpool.Length())
 
 	return successful
 }
