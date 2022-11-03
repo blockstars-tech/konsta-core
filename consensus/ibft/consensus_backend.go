@@ -246,13 +246,14 @@ func (i *backendIBFT) writeTransactions(
 			"failed", failed,
 			"skipped", skipped,
 			"remaining", i.txpool.Length(),
+			"reapply-queue", i.txreapply.Length(),
 		)
 	}()
 
 	i.txpool.Prepare()
 
 write:
-	
+
 	for {
 		i.logger.Error("write loop hit")
 		select {
@@ -295,9 +296,6 @@ func (i *backendIBFT) writeTransaction(
 	transition transitionInterface,
 	gasLimit uint64,
 ) (*txExeResult, bool) {
-	
-
-	
 
 	if tx == nil {
 		return nil, false
@@ -318,10 +316,9 @@ func (i *backendIBFT) writeTransaction(
 		// continue processing
 		return &txExeResult{tx, fail}, true
 	}
-	
 
 	if err := transition.Write(tx); err != nil {
-		i.logger.Error("transition write error 324","err", err)
+		i.logger.Error("transition write error 324", "err", err)
 		if _, ok := err.(*state.GasLimitReachedTransitionApplicationError); ok { //nolint:errorlint
 			// stop processing
 			return nil, false
@@ -330,8 +327,8 @@ func (i *backendIBFT) writeTransaction(
 
 			return &txExeResult{tx, skip}, true
 		} else {
-			i.txpool.Drop(tx) 
-	
+			i.txpool.Drop(tx)
+
 			return &txExeResult{tx, fail}, true
 		}
 	}

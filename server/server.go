@@ -66,6 +66,12 @@ type Server struct {
 	// transaction pool
 	txpool *txpool.TxPool
 
+	// reapply interface
+	txreapply *txpool.TxReApplyPool
+
+	// reapply interface
+	txreapplystorage *txpool.TxReApplyStoragePool
+
 	serverMetrics *serverMetrics
 
 	prometheusServer *http.Server
@@ -211,9 +217,18 @@ func NewServer(config *Config) (*Server, error) {
 			return nil, err
 		}
 
+		// reapply storage
+		m.txreapplystorage, err = txpool.NewTxReApplyStoragePool(
+			logger,
+			&txpool.ReApplyStorageConfig{},
+		)
+
+		m.txreapplystorage.Prepare()
+
 		// start transaction pool
 		m.txpool, err = txpool.NewTxPool(
 			logger,
+			m.txreapplystorage,
 			m.chain.Params.Forks.At(0),
 			hub,
 			m.grpcServer,
@@ -226,6 +241,20 @@ func NewServer(config *Config) (*Server, error) {
 				DeploymentWhitelist: deploymentWhitelist,
 			},
 		)
+
+		logger.Info(`transaction reapply interface factory called`)
+		// reapply interface
+		m.txreapply, _ = txpool.NewTxReApplyPool(
+			logger,
+			m.txpool,
+			m.txreapplystorage,
+			&txpool.ReApplyConfig{
+				ReApplyCountDown: 5000,
+			},
+		)
+
+		m.txreapply.Prepare()
+
 		if err != nil {
 			return nil, err
 		}
@@ -404,17 +433,19 @@ func (s *Server) setupConsensus() error {
 
 	consensus, err := engine(
 		&consensus.Params{
-			Context:        context.Background(),
-			Config:         config,
-			TxPool:         s.txpool,
-			Network:        s.network,
-			Blockchain:     s.blockchain,
-			Executor:       s.executor,
-			Grpc:           s.grpcServer,
-			Logger:         s.logger,
-			Metrics:        s.serverMetrics.consensus,
-			SecretsManager: s.secretsManager,
-			BlockTime:      s.config.BlockTime,
+			Context:              context.Background(),
+			Config:               config,
+			TxPool:               s.txpool,
+			TxReApplyPool:        s.txreapply,
+			TxReApplyStoragePool: s.txreapplystorage,
+			Network:              s.network,
+			Blockchain:           s.blockchain,
+			Executor:             s.executor,
+			Grpc:                 s.grpcServer,
+			Logger:               s.logger,
+			Metrics:              s.serverMetrics.consensus,
+			SecretsManager:       s.secretsManager,
+			BlockTime:            s.config.BlockTime,
 		},
 	)
 
@@ -521,10 +552,10 @@ func (j *jsonRPCHub) ApplyTxn(
 	if err != nil {
 		return
 	}
-	
+
 	result, err = transition.Apply(txn)
-	fmt.Sprintf("ApplyTx server 526, %s",result.Err)
-	fmt.Sprintf("ApplyTx server 526, %s",err)
+	fmt.Sprintf("ApplyTx server 526, %s", result.Err)
+	fmt.Sprintf("ApplyTx server 526, %s", err)
 	return
 }
 

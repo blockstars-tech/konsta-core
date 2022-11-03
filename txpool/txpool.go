@@ -133,10 +133,11 @@ type promoteRequest struct {
 // transactions are the first-in-line of some promoted queue,
 // ready to be written to the state (primaries).
 type TxPool struct {
-	logger hclog.Logger
-	signer signer
-	forks  chain.ForksInTime
-	store  store
+	logger           hclog.Logger
+	txreapplystorage *TxReApplyStoragePool
+	signer           signer
+	forks            chain.ForksInTime
+	store            store
 
 	// map of all accounts registered by the pool
 	accounts accountsMap
@@ -221,6 +222,7 @@ func newDeploymentWhitelist(deploymentWhitelistRaw []types.Address) deploymentWh
 // NewTxPool returns a new pool for processing incoming transactions.
 func NewTxPool(
 	logger hclog.Logger,
+	txreapplystorage *TxReApplyStoragePool,
 	forks chain.ForksInTime,
 	store store,
 	grpcServer *grpc.Server,
@@ -229,15 +231,16 @@ func NewTxPool(
 	config *Config,
 ) (*TxPool, error) {
 	pool := &TxPool{
-		logger:      logger.Named("txpool"),
-		forks:       forks,
-		store:       store,
-		metrics:     metrics,
-		executables: newPricedQueue(),
-		accounts:    accountsMap{maxEnqueuedLimit: config.MaxAccountEnqueued},
-		index:       lookupMap{all: make(map[types.Hash]*types.Transaction)},
-		gauge:       slotGauge{height: 0, max: config.MaxSlots},
-		priceLimit:  config.PriceLimit,
+		logger:           logger.Named("txpool"),
+		txreapplystorage: txreapplystorage,
+		forks:            forks,
+		store:            store,
+		metrics:          metrics,
+		executables:      newPricedQueue(),
+		accounts:         accountsMap{maxEnqueuedLimit: config.MaxAccountEnqueued},
+		index:            lookupMap{all: make(map[types.Hash]*types.Transaction)},
+		gauge:            slotGauge{height: 0, max: config.MaxSlots},
+		priceLimit:       config.PriceLimit,
 
 		//	main loop channels
 		enqueueReqCh: make(chan enqueueRequest),
@@ -836,6 +839,7 @@ func (p *TxPool) addGossipTx(obj interface{}, _ peer.ID) {
 	if err := p.addTx(gossip, tx); err != nil {
 		if errors.Is(err, ErrAlreadyKnown) {
 			p.logger.Error("rejecting known tx (gossip)", "hash", tx.Hash.String())
+			p.txreapplystorage.Push(tx)
 
 			return
 		}
