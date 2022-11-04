@@ -38,6 +38,12 @@ var (
 	ErrParentCommittedSealsNotFound = errors.New("parent committed seals not found")
 )
 
+type txReApplyInterface interface {
+	Prepare()
+	Length() uint64
+	Push(tx *types.Transaction)
+}
+
 type txPoolInterface interface {
 	Prepare()
 	Length() uint64
@@ -68,6 +74,7 @@ type backendIBFT struct {
 	network        *network.Server        // Reference to the networking layer
 	executor       *state.Executor        // Reference to the state executor
 	txpool         txPoolInterface        // Reference to the transaction pool
+	txreapply      txReApplyInterface     // Reference to the transaction reapply layer
 	syncer         syncer.Syncer          // Reference to the sync protocol
 	secretsManager secrets.SecretsManager // Reference to the secret manager
 	Grpc           *grpc.Server           // Reference to the gRPC manager
@@ -142,6 +149,7 @@ func Factory(params *consensus.Params) (consensus.Consensus, error) {
 		network:    params.Network,
 		executor:   params.Executor,
 		txpool:     params.TxPool,
+		txreapply:  params.TxReApplyPool,
 		syncer: syncer.NewSyncer(
 			params.Logger,
 			params.Network,
