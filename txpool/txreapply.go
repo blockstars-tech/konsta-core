@@ -58,7 +58,7 @@ func NewTxReApplyPool(
 
 func reApplyFunction(logger hclog.Logger, txpool *TxPool, txstorage *TxReApplyStoragePool) {
 	for i := 0; i < 100000; i++ {
-		time.Sleep(2 * time.Second)
+		time.Sleep(reApplyCoolDown)
 		logger.Info("reapply tx`s", txstorage.Length())
 		if txstorage.executables.length() != 0 {
 			var txs = txstorage.executables.pop()
@@ -66,7 +66,6 @@ func reApplyFunction(logger hclog.Logger, txpool *TxPool, txstorage *TxReApplySt
 			if err != nil {
 				logger.Error("reapply tx apply error")
 			}
-			txstorage.executables.clear()
 			txstorage.Push(txs)
 		}
 	}
