@@ -255,7 +255,7 @@ func (i *backendIBFT) writeTransactions(
 write:
 
 	for {
-		i.logger.Error("write loop hit")
+		// i.logger.Error("write loop hit")
 		select {
 		case <-blockTimer.C:
 			return

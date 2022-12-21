@@ -251,8 +251,8 @@ func (t *Transition) Write(txn *types.Transaction) error {
 
 	result, e := t.Apply(msg)
 
-	t.logger.Error("ACtually returned from executer the error","err",result.Err)
-	t.logger.Error("ACtually returned from executer the e","err",e)
+	// t.logger.Error("ACtually returned from executer the error","err",result.Err)
+	// t.logger.Error("ACtually returned from executer the e","err",e)
 	if result.Reverted() {
 		t.logger.Error("ACtR     EVER    TEDr","err",result.Err)
 		return NewTransitionApplicationError(nil, true)
@@ -342,8 +342,8 @@ func (t *Transition) GetTxnHash() types.Hash {
 func (t *Transition) Apply(msg *types.Transaction) (*runtime.ExecutionResult, error) {
 	s := t.state.Snapshot()
 	result, err := t.apply(msg)
-	t.logger.Error("executer result err 344", "err", result.Err)
-	t.logger.Error("executer err itself 345", "err", err)
+	// t.logger.Error("executer result err 344", "err", result.Err)
+	// t.logger.Error("executer err itself 345", "err", err)
 	if err != nil {
 		t.state.RevertToSnapshot(s)
 	}
@@ -351,8 +351,8 @@ func (t *Transition) Apply(msg *types.Transaction) (*runtime.ExecutionResult, er
 	if t.r.PostHook != nil {
 		t.r.PostHook(t)
 	}
-	t.logger.Error("executer result err 352", "err", result.Err)
-	t.logger.Error("executer err itself 353", "err", err)
+	// t.logger.Error("executer result err 352", "err", result.Err)
+	// t.logger.Error("executer err itself 353", "err", err)
 	return result, err
 }
 
@@ -486,7 +486,7 @@ func (t *Transition) apply(msg *types.Transaction) (*runtime.ExecutionResult, er
 		result = t.Call2(msg.From, *msg.To, msg.Input, value, gasLeft)
 	}
 
-	t.logger.Error("little apply line 480 result.Err", "err", result.Err)
+	// t.logger.Error("little apply line 480 result.Err", "err", result.Err)
 	refund := txn.GetRefund()
 	result.UpdateGasUsed(msg.Gas, refund)
 
@@ -501,7 +501,7 @@ func (t *Transition) apply(msg *types.Transaction) (*runtime.ExecutionResult, er
 	// return gas to the pool
 	t.addGasPool(result.GasLeft)
 
-	t.logger.Error("little apply line 495 result.ERR", "err", result.Err)
+	// t.logger.Error("little apply line 495 result.ERR", "err", result.Err)
 
 	return result, nil
 }

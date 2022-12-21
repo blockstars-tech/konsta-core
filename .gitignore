@@ -32,3 +32,7 @@ linuxBuilds/
 
 buildTest/us-1/konsta*
 buildTest/us-2/konsta*
+
+
+buildTest/us-1/data-dir/*
+buildTest/us-2/data-dir/*
